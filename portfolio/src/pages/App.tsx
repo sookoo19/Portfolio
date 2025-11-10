@@ -5,7 +5,7 @@ function App() {
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
           Tailwind CSS v4 is working!
         </h1>
-        <p className="text-gray-600">
+        <p className="text-4xl text-gray-600">
           Start editing to see changes in real-time.
         </p>
       </div>
