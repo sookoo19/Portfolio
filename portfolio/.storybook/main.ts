@@ -1,8 +1,8 @@
-import type { StorybookConfig } from '@storybook/react-vite'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import type { StorybookConfig } from '@storybook/react-vite';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -18,19 +18,19 @@ const config: StorybookConfig = {
     options: {},
   },
   viteFinal: async config => {
-    config.resolve = config.resolve || {}
+    config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       react: path.resolve(__dirname, '..', 'node_modules', 'react'),
       'react-dom': path.resolve(__dirname, '..', 'node_modules', 'react-dom'),
-    }
-    config.optimizeDeps = config.optimizeDeps || {}
+    };
+    config.optimizeDeps = config.optimizeDeps || {};
     config.optimizeDeps.include = [
       ...(config.optimizeDeps.include || []),
       'react',
       'react-dom',
-    ]
-    return config
+    ];
+    return config;
   },
-}
-export default config
+};
+export default config;

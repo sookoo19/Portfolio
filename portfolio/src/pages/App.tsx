@@ -1,19 +1,19 @@
-import Logo from '../components/Logo'
+import Logo from '../components/Logo';
+import FileIcon from '../components/FileIcon';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-      <Logo />
-      <div className="bg-white p-8 rounded-lg shadow-xl">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Tailwind CSS v4 is working!
-        </h1>
-        <p className="text-4xl text-gray-600">
-          Start editing to see changes in real-time.
-        </p>
+    <div className='p-4 min-h-screen max-h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center'>
+      <div className='w-full max-w-full grid grid-cols-12 grid-rows-7 gap-4'>
+        <div className='col-start-6 col-span-2 row-start-3 row-span-2 flex items-center justify-center'>
+          <Logo />
+        </div>
+        <div className='col-start-1 row-start-1'>
+          <FileIcon name='テスト' />
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import FileIcon from './FileIcon'
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import FileIcon from './FileIcon';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -18,10 +18,10 @@ const meta = {
   args: {
     name: 'Documents',
   },
-} satisfies Meta<typeof FileIcon>
+} satisfies Meta<typeof FileIcon>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const MainFileIcon: Story = {}
+export const MainFileIcon: Story = {};
