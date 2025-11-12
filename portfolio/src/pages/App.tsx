@@ -1,5 +1,6 @@
 import Logo from '../components/Logo';
 import FileIcon from '../components/FileIcon';
+import ProfileIcon from '../components/ProfileIcon';
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
         </div>
         <div className='col-start-1 row-start-1'>
           <FileIcon name='テスト' />
+        </div>
+        <div className='col-start-1 row-start-2'>
+          <ProfileIcon name='Profile' />
         </div>
       </div>
     </div>
