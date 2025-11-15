@@ -5,6 +5,22 @@ export interface ProfileIconProps {
   name?: string;
   className?: string;
 }
+
+function bounceEase(x: number) {
+  const n1 = 7.5625;
+  const d1 = 2.75;
+
+  if (x < 1 / d1) {
+    return n1 * x * x;
+  } else if (x < 2 / d1) {
+    return n1 * (x -= 1.5 / d1) * x + 0.75;
+  } else if (x < 2.5 / d1) {
+    return n1 * (x -= 2.25 / d1) * x + 0.9375;
+  } else {
+    return n1 * (x -= 2.625 / d1) * x + 0.984375;
+  }
+}
+
 export default function ProfileIcon({
   name,
   className = '',
@@ -21,18 +37,19 @@ export default function ProfileIcon({
         whileInView={
           !isHovering
             ? {
-                y: [0, -14, 0],
+                y: [0, -20, 0],
                 scale: [1, 1.2, 1],
-                transition: {
-                  duration: 0.3,
-                  delay: 2,
-                  ease: 'easeIn',
-                  repeat: Infinity,
-                  repeatDelay: 3,
-                },
               }
             : undefined
         }
+        transition={{
+          duration: 0.8,
+          delay: 2,
+          ease: ['easeOut', bounceEase],
+          times: [0, 0.4, 1],
+          repeat: Infinity,
+          repeatDelay: 3,
+        }}
         viewport={{ once: false, amount: 0.6 }}
       >
         <img
