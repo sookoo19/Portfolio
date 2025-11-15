@@ -53,7 +53,7 @@ export default function ProfileIcon({
                 ease: ['easeOut', bounceEase],
                 times: [0, 0.4, 1],
                 repeat: Infinity,
-                repeatDelay: 3,
+                repeatDelay: 4,
               }
             : { duration: 0.2 }
         }
@@ -65,7 +65,7 @@ export default function ProfileIcon({
           alt={name ? '' : 'Profile'}
           width={64}
           height={64}
-          className='w-16 h-16 object-cover'
+          className='w-16 h-16 object-cover rounded-sm'
         />
 
         {name && (
