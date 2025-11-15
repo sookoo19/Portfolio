@@ -32,8 +32,11 @@ export default function ProfileIcon({
       <motion.button
         onHoverStart={() => setIsHovering(true)}
         onHoverEnd={() => setIsHovering(false)}
-        whileTap={{ scale: 0.8, rotate: 5 }}
-        whileHover={{ scale: 1.2 }}
+        animate={
+          isHovering
+            ? { scale: 1.2, y: 0 }
+            : undefined
+        }
         whileInView={
           !isHovering
             ? {
@@ -42,15 +45,20 @@ export default function ProfileIcon({
               }
             : undefined
         }
-        transition={{
-          duration: 0.8,
-          delay: 2,
-          ease: ['easeOut', bounceEase],
-          times: [0, 0.4, 1],
-          repeat: Infinity,
-          repeatDelay: 3,
-        }}
+        transition={
+          !isHovering
+            ? {
+                duration: 0.8,
+                delay: 2,
+                ease: ['easeOut', bounceEase],
+                times: [0, 0.4, 1],
+                repeat: Infinity,
+                repeatDelay: 3,
+              }
+            : { duration: 0.2 }
+        }
         viewport={{ once: false, amount: 0.6 }}
+        whileTap={{ scale: 0.8, rotate: 5 }}
       >
         <img
           src='/images/Profile.jpg'
