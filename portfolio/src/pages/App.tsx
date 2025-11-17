@@ -4,7 +4,7 @@ import FileIcon from '../components/FileIcon';
 import ProfileIcon from '../components/ProfileIcon';
 import DownScrollButton from '../components/DownScrollButton';
 
-export default function App() { 
+export default function App() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
