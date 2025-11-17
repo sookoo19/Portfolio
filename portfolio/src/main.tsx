@@ -6,7 +6,7 @@ import Loading from './components/Loading';
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const App = lazy(() => 
-  sleep(2000).then(() => import('./pages/App'))
+  sleep(3500).then(() => import('./pages/App'))
 );
 
 createRoot(document.getElementById('root')!).render(
