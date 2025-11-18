@@ -32,11 +32,7 @@ export default function ProfileIcon({
       <motion.button
         onHoverStart={() => setIsHovering(true)}
         onHoverEnd={() => setIsHovering(false)}
-        animate={
-          isHovering
-            ? { scale: 1.2, y: 0 }
-            : undefined
-        }
+        animate={isHovering ? { scale: 1.2, y: 0 } : undefined}
         whileInView={
           !isHovering
             ? {
@@ -66,6 +62,7 @@ export default function ProfileIcon({
           width={64}
           height={64}
           className='w-16 h-16 object-cover rounded-sm'
+          draggable='false'
         />
 
         {name && (
