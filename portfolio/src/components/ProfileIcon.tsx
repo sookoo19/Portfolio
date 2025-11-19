@@ -59,9 +59,7 @@ export default function ProfileIcon({
         <img
           src='/images/Profile.jpg'
           alt={name ? '' : 'Profile'}
-          width={64}
-          height={64}
-          className='w-16 h-16 object-cover rounded-sm'
+          className='w-16 h-16 min-w-[4rem] min-h-[4rem] object-cover rounded-sm aspect-square flex-shrink-0'
           draggable='false'
         />
 
