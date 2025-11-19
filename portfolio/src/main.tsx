@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import Loading from './components/Loading';
 import Intro from './pages/Intro';
+import Work from './pages/Work';
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')!).render(
     <Suspense fallback={<Loading />}>
       <App />
       <Intro />
+      <Work />
     </Suspense>
   </StrictMode>
 );
