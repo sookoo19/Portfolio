@@ -1,4 +1,8 @@
+import { useState } from 'react';
+import TripostModal from '../components/TripostModal.tsx';
+
 export default function Work() {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div className='p-4 min-h-screen bg-[#f5efe2] flex items-center justify-center'>
       <div className='w-full max-w-4xl mx-auto flex flex-col items-center gap-4 md:gap-8'>
@@ -10,14 +14,34 @@ export default function Work() {
         </h2>
         <div className='w-full flex flex-col md:flex-row items-center md:items-start gap-8'>
           <div className='flex flex-col items-center'>
-            <img src='/images/tripost/ogp.jpg' alt='Product Image1' className=" w-full object-cover aspect-[16/10] rounded-sm shadow-lg hover:shadow-xl hover:scale-105 transform duration-200 ease-in-out" draggable='false' />
-						<figcaption className='text-base mt-3'>旅行共有SNS「Tripost」</figcaption>
+            <button
+              onClick={() => setOpenModal(true)}
+              className='w-full rounded-sm cursor-pointer'
+              aria-label='Open modal'
+            >
+              <img
+                src='/images/tripost/ogp.jpg'
+                alt='Product Image1'
+                className=' w-full object-cover aspect-[16/10] rounded-sm shadow-lg hover:shadow-xl hover:scale-105 transform duration-200 ease-in-out'
+                draggable='false'
+              />
+            </button>
+            <figcaption className='text-base mt-3'>
+              旅行共有SNS「Tripost」
+            </figcaption>
           </div>
-					<div className='flex flex-row items-center'>
-            <img src='/images/tripost/ogp.jpg' alt='Product Image1' className=" w-full object-cover aspect-[16/10] rounded-sm shadow-lg hover:shadow-xl hover:scale-105 transform duration-200 ease-in-out" draggable='false' />
+          <div className='flex flex-row items-center'>
+            <img
+              src='/images/tripost/ogp.jpg'
+              alt='Product Image1'
+              className=' w-full object-cover aspect-[16/10] rounded-sm shadow-lg hover:shadow-xl hover:scale-105 transform duration-200 ease-in-out'
+              draggable='false'
+            />
           </div>
         </div>
       </div>
+      {/* モーダル */}
+      <TripostModal isOpen={openModal} onClose={() => setOpenModal(false)} />
     </div>
   );
 }
