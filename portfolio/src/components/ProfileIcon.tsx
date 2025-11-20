@@ -66,7 +66,9 @@ export default function ProfileIcon({
         {name && (
           <figcaption
             className='text-sm text-white select-none mt-3'
-            style={{ textShadow: '0 2px 6px rgba(23, 23, 23, 0.6)' }}
+            style={{
+              textShadow: '0 2px 6px rgba(23, 23, 23, 0.6)',
+            }}
           >
             {name}
           </figcaption>
