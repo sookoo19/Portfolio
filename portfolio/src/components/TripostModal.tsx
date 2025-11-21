@@ -75,7 +75,9 @@ export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
                 </h3>
                 <div className='text-base text-gray-700 leading-relaxed'>
                   <p className='mb-2'>
-                    旅を記録し、他のユーザーの旅からインスピレーションを得られる旅行共有SNSです。ユーザーは、写真・旅行日程・おすすめ情報などを投稿、共有できます。また、ユーザーは自身の旅スタイルや目的に沿って、他ユーザーの旅を検索することができます。旅情報には、訪れた場所の位置情報を視覚的に確認できるマップ機能や、ボタン一つで旅程をそのままGoogleマップでルート検索できる機能を実装しました。
+                    本サービスは、旅の記録や共有を通じて、ほかのユーザーの旅行体験からインスピレーションを得られる旅行共有型SNSです。ユーザーは、写真・旅行日程・おすすめスポットなどの旅情報を投稿し、シェアできます。
+                    また、自分の旅のスタイルや目的に合わせて、他ユーザーの投稿を検索できるため、新しい旅の発見が簡単にできます。投稿には訪れた場所の位置情報が紐づいており、マップ上で直感的に確認可能です。さらに、ワンタップで旅行ルートをGoogleマップに連携し、そのまま経路検索できる機能も搭載しています。
+                    SNSとしての基本機能であるフォロー、いいね、通知機能も実装しており、旅を通じたユーザー同士の交流をより豊かに楽しめます。
                   </p>
                   <p>
                     <a
@@ -141,8 +143,8 @@ export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
                         <strong>バックエンド —</strong> Laravel, Redis
                       </div>
                       <div>
-                        <strong>インフラ / CI —</strong> Docker, Docker Compose, AWS
-                        (EC2 / RDS / Route 53 / S3), Nginx, Github Actions
+                        <strong>インフラ / CI —</strong> Docker, Docker Compose,
+                        AWS (EC2 / RDS / Route 53 / S3), Nginx, Github Actions
                       </div>
                       <div>
                         <strong>その他 —</strong> Mailgun, Google Maps API
