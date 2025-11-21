@@ -6,7 +6,10 @@ interface PortfolioModalProps {
   onClose: () => void;
 }
 
-export default function PortfolioModal({ isOpen, onClose }: PortfolioModalProps) {
+export default function PortfolioModal({
+  isOpen,
+  onClose,
+}: PortfolioModalProps) {
   const [mainSrc, setMainSrc] = useState('/images/tripost/welcome.png');
   const [caption, setCaption] = useState('Welcomeページ');
   const [fadeIn, setFadeIn] = useState(true);
@@ -141,8 +144,8 @@ export default function PortfolioModal({ isOpen, onClose }: PortfolioModalProps)
                         <strong>バックエンド —</strong> Laravel, Redis
                       </div>
                       <div>
-                        <strong>インフラ / CI —</strong> Docker, Docker Compose, AWS
-                        (EC2 / RDS / Route 53 / S3), Nginx, Github Actions
+                        <strong>インフラ / CI —</strong> Docker, Docker Compose,
+                        AWS (EC2 / RDS / Route 53 / S3), Nginx, Github Actions
                       </div>
                       <div>
                         <strong>その他 —</strong> Mailgun, Google Maps API
