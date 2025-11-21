@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-interface TripostModalProps {
+interface PortfolioModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
+export default function PortfolioModal({ isOpen, onClose }: PortfolioModalProps) {
   const [mainSrc, setMainSrc] = useState('/images/tripost/welcome.png');
   const [caption, setCaption] = useState('Welcomeページ');
   const [fadeIn, setFadeIn] = useState(true);
@@ -71,11 +71,11 @@ export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
             <div className='flex flex-col lg:flex-row'>
               <div className='flex flex-col lg:w-2/5'>
                 <h3 className='text-xl md:text-3xl font-bold mb-4'>
-                  旅行共有SNS「Tripost」
+                  ポートフォリオサイト
                 </h3>
                 <div className='text-base text-gray-700 leading-relaxed'>
                   <p className='mb-2'>
-                    旅を記録し、他のユーザーの旅からインスピレーションを得られる旅行共有SNSです。ユーザーは、写真・旅行日程・おすすめ情報などを投稿、共有できます。また、ユーザーは自身の旅スタイルや目的に沿って、他ユーザーの旅を検索することができます。旅情報には、訪れた場所の位置情報を視覚的に確認できるマップ機能や、ボタン一つで旅程をそのままGoogleマップでルート検索できる機能を実装しました。
+                    ポートフォリオサイトを作成しました（本サイト）。
                   </p>
                   <p>
                     <a

@@ -8,7 +8,7 @@ export default function Intro() {
         </h1>
 
         {/* プロフィール画像と名前・説明 */}
-        <div className='w-full flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8'>
+        <div className='w-full flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-8'>
           {/* プロフィール画像 */}
           <div className='flex-shrink-0'>
             <img
