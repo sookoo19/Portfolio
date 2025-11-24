@@ -4,6 +4,7 @@ import './index.css';
 import Loading from './components/Loading';
 import Intro from './pages/Intro';
 import Work from './pages/Work';
+import Profile from './pages/Profile';
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
       <App />
       <Intro />
       <Work />
+      <Profile />
     </Suspense>
   </StrictMode>
 );
