@@ -1,7 +1,14 @@
+import { motion } from 'motion/react';
 import YearMonth from '../components/YearMonth.tsx';
 import DeatilProfile from '../components/DeatilProfile.tsx';
 
 export default function Profile() {
+  // タイムラインアイテムのアニメーション設定
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 }
+  };
+
   return (
     <div className='p-4 min-h-screen bg-[#f2f2f2] flex items-center justify-center'>
       <div className='w-full max-w-4xl mx-auto flex flex-col items-center'>
@@ -15,22 +22,35 @@ export default function Profile() {
           <div className='absolute left-[100px] md:left-[120px] top-0 bottom-0 w-0.5 bg-gray-300'/>
           
           {/* 経歴アイテム */}
-          <div className='space-y-8 md:space-y-12'>
-            <div className='flex flex-row items-start relative'>
+          <div className='space-y-8 md:space-y-24'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2000' month='10月' />
               </div>
-              {/* ドット */}
               <div className='absolute left-[95px] md:left-[115px] top-[10px] w-3 h-3 bg-gray-600 rounded-full border-4 border-[#f2f2f2]'></div>
               <div className='ml-10 md:ml-16 flex-1'>
                 <DeatilProfile
-                  title='愛知で生まれる'
+                  title='愛知県で生まれる'
                   des=''
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2008' month='' />
               </div>
@@ -41,9 +61,16 @@ export default function Profile() {
                   des='小学2〜6年生までサッカークラブに所属。'
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2013' month='4月' />
               </div>
@@ -54,9 +81,16 @@ export default function Profile() {
                   des='中高6年間バスケ部に所属。最高成績は高校での県大会出場。'
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2019' month='4月' />
               </div>
@@ -64,12 +98,19 @@ export default function Profile() {
               <div className='ml-10 md:ml-16 flex-1'>
                 <DeatilProfile
                   title='九州大学芸術工学部画像設計学科(現:メディアデザインコース)へ入学'
-                  des='デザインや映像、メディアアートについて学び、htmlやcss、pythonに触れる。'
+                  des='デザインや映像、メディアアートについて学び、htmlやcss、pythonに少し触れる。'
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2019' month='9月' />
               </div>
@@ -80,9 +121,16 @@ export default function Profile() {
                   des='先輩に誘われプロレスサークルへ入る。学内外を対象に毎年２回公演を実施した。'
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2020' month='3月' />
               </div>
@@ -93,9 +141,16 @@ export default function Profile() {
                   des='主にインディーズバンドのMVや短編映画、ライブ背景映像を制作した。'
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2021' month='7月' />
               </div>
@@ -106,9 +161,16 @@ export default function Profile() {
                   des='コンペを勝ち抜き、初めてメジャーアーティストのMVを作成。'
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2023' month='' />
               </div>
@@ -119,9 +181,16 @@ export default function Profile() {
                   des='地元企業との産学連携プロジェクト「ECYCLE PROJECT」で商品設計やマーケティング、広報に携わる。【受賞歴:第62回福岡広告協会賞 銀賞、第15回日本マーケティング大賞 地域賞】'
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2023' month='4月' />
               </div>
@@ -132,9 +201,16 @@ export default function Profile() {
                   des='大学卒業後、映像制作の道へ進む。主にTVCMやWebムービーの制作進行を担当。'
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2024' month='12月' />
               </div>
@@ -145,9 +221,16 @@ export default function Profile() {
                   des='将来の働き方に不安を感じてしまい、将来の選択肢を広げるために協力隊へ応募し合格。'
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2025' month='4月' />
               </div>
@@ -158,9 +241,16 @@ export default function Profile() {
                   des='発展途上国での生活で、世界におけるITの重要性、影響力を再認識し、IT業界への転職を決意する。'
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row items-start relative'>
+            <motion.div
+              className='flex flex-row items-start relative'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
+            >
               <div className='flex-shrink-0'>
                 <YearMonth year='2026' month='12月' />
               </div>
@@ -171,7 +261,7 @@ export default function Profile() {
                   des='2年の任期を終え、チュニジアから帰国する。'
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
