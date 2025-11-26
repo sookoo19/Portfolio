@@ -6,6 +6,7 @@ import Loading from './components/Loading';
 import Intro from './pages/Intro';
 import Work from './pages/Work';
 import Profile from './pages/Profile';
+import Skill from './pages/Skill';
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 const App = lazy(() => sleep(3500).then(() => import('./pages/App')));
@@ -32,6 +33,7 @@ export default function RootApp() {
       />
       <App />
       <Intro />
+      <Skill />
       <Work />
       <Profile />
     </>
