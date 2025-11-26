@@ -6,7 +6,7 @@ export default function Profile() {
   // タイムラインアイテムのアニメーション設定
   const itemVariants = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 }
+    visible: { opacity: 1, x: 0 },
   };
 
   return (
@@ -15,18 +15,18 @@ export default function Profile() {
         <h1 className='my-8 text-4xl md:text-6xl font-bold whitespace-nowrap'>
           Profile
         </h1>
-        
+
         {/* タイムライン */}
         <div className='relative w-full'>
           {/* 縦線 */}
-          <div className='absolute left-[100px] md:left-[120px] top-0 bottom-0 w-0.5 bg-gray-300'/>
-          
+          <div className='absolute left-[100px] md:left-[120px] top-0 bottom-0 w-0.5 bg-gray-300' />
+
           {/* 経歴アイテム */}
           <div className='space-y-8 md:space-y-24'>
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5 }}
               variants={itemVariants}
@@ -36,17 +36,14 @@ export default function Profile() {
               </div>
               <div className='absolute left-[95px] md:left-[115px] top-[10px] w-3 h-3 bg-gray-600 rounded-full border-4 border-[#f2f2f2]'></div>
               <div className='ml-10 md:ml-16 flex-1'>
-                <DeatilProfile
-                  title='愛知県で生まれる'
-                  des=''
-                />
+                <DeatilProfile title='愛知県で生まれる' des='' />
               </div>
             </motion.div>
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}
@@ -65,8 +62,8 @@ export default function Profile() {
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}
@@ -85,8 +82,8 @@ export default function Profile() {
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}
@@ -105,8 +102,8 @@ export default function Profile() {
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}
@@ -125,8 +122,8 @@ export default function Profile() {
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}
@@ -145,8 +142,8 @@ export default function Profile() {
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}
@@ -165,8 +162,8 @@ export default function Profile() {
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}
@@ -185,8 +182,8 @@ export default function Profile() {
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}
@@ -205,8 +202,8 @@ export default function Profile() {
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}
@@ -225,8 +222,8 @@ export default function Profile() {
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}
@@ -245,8 +242,8 @@ export default function Profile() {
 
             <motion.div
               className='flex flex-row items-start relative'
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               variants={itemVariants}

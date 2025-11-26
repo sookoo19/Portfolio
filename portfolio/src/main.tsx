@@ -1,6 +1,6 @@
 import { StrictMode, Suspense, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
-import { motion, useScroll } from "motion/react"
+import { motion, useScroll } from 'motion/react';
 import './index.css';
 import Loading from './components/Loading';
 import Intro from './pages/Intro';
@@ -13,14 +13,14 @@ const App = lazy(() => sleep(3500).then(() => import('./pages/App')));
 
 export default function RootApp() {
   const { scrollYProgress } = useScroll();
-  
+
   return (
     <>
       <motion.div
-        id="scroll-indicator"
+        id='scroll-indicator'
         style={{
           scaleX: scrollYProgress,
-          position: "fixed",
+          position: 'fixed',
           top: 0,
           left: 0,
           right: 0,
@@ -28,7 +28,7 @@ export default function RootApp() {
           originX: 0,
           zIndex: 9999,
           opacity: 0.8,
-          backgroundColor: "#ff0088",
+          backgroundColor: '#ff0088',
         }}
       />
       <App />
@@ -40,11 +40,10 @@ export default function RootApp() {
   );
 }
 
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Suspense fallback={<Loading />}>
-    <RootApp />
+      <RootApp />
     </Suspense>
   </StrictMode>
 );
