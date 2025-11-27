@@ -84,7 +84,9 @@ export default function Skill() {
         <div className='mt-10 w-full max-w-3xl mx-auto flex flex-col items-center justify-center'>
           <h2 className='text-xl font-bold text-center'>評価基準</h2>
           <table className='w-full border-collapse my-4'>
-						<tr className='border-b-2 border-gray-300' />
+            <thead>
+              <tr className='border-b-2 border-gray-300'/>
+            </thead>
             <tbody>
               <tr className='border-b border-gray-200'>
                 <td className='py-3 pr-4'>
@@ -126,8 +128,10 @@ export default function Skill() {
                   エキスパート（技術的リーダーシップが取れる）
                 </td>
               </tr>
-              <tr className='border-b-2 border-gray-300' />
             </tbody>
+						<thead>
+              <tr className='border-b-2 border-gray-300'/>
+            </thead>
           </table>
         </div>
       </div>
