@@ -83,13 +83,8 @@ export default function Skill() {
         </div>
         <div className='w-full max-w-3xl mx-auto flex flex-col items-center justify-center'>
           <h2 className='text-xl font-bold text-center'>評価基準</h2>
-          <table className='w-full border-collapse'>
-            <thead>
-              <tr className='border-b-2 border-gray-300'>
-                <th className='py-2 text-left'>レベル</th>
-                <th className='py-2 text-left'>説明</th>
-              </tr>
-            </thead>
+          <table className='w-full border-collapse my-4'>
+						<tr className='border-b-2 border-gray-300' />
             <tbody>
               <tr className='border-b border-gray-200'>
                 <td className='py-3 pr-4'>
