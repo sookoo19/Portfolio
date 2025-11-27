@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import ProfileIcon from './ProfileIcon';
+import MoveIcon from './MoveIcon';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
-  title: 'Example/ProfileIcon',
-  component: ProfileIcon,
+const meta: Meta<typeof MoveIcon> = {
+  title: 'Example/MoveIcon',
+  component: MoveIcon,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -13,15 +13,22 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     name: { control: 'text' },
+    src: { control: 'text' },
     className: { table: { disable: true } },
   },
   args: {
     name: 'Profile',
+    src: '/images/Profile.jpg',
   },
-} satisfies Meta<typeof ProfileIcon>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const MainProfileIcon: Story = {};
+export const AboutMe: Story = {};
+
+export const Skill: Story = {args: {
+    name: 'Skill',
+    src: '/images/skills-icon.svg',
+  },};

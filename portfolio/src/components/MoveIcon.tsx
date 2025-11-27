@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 
-export interface ProfileIconProps {
+export interface MoveIconProps {
   name?: string;
+  src: string;
   className?: string;
 }
 
@@ -21,10 +22,11 @@ function bounceEase(x: number) {
   }
 }
 
-export default function ProfileIcon({
+export default function MoveIcon({
   name,
+  src,
   className = '',
-}: ProfileIconProps) {
+}: MoveIconProps) {
   const [isHovering, setIsHovering] = useState(false);
 
   return (
@@ -57,15 +59,15 @@ export default function ProfileIcon({
         whileTap={{ scale: 0.8, rotate: 5 }}
       >
         <img
-          src='/images/Profile.jpg'
-          alt={name ? '' : 'Profile'}
+          src={src}
+          alt={name ? '' : `${name}`}
           className='w-16 h-16 min-w-[4rem] min-h-[4rem] object-cover rounded-sm aspect-square flex-shrink-0'
           draggable='false'
         />
 
         {name && (
           <figcaption
-            className='text-sm text-white select-none mt-3'
+            className='text-sm text-white whitespace-nowrap select-none mt-1.5 lg:mt-2'
             style={{
               textShadow: '0 2px 6px rgba(23, 23, 23, 0.6)',
             }}
