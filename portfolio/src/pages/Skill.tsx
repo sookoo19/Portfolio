@@ -1,14 +1,15 @@
 import SkillSheet from '../components/SkillSheet.tsx';
+import AnotherSkillSheet from '../components/AnotherSkillSheet.tsx';
 
 export default function Skill() {
   return (
     <div className='p-4 min-h-screen bg-[#f2f2f2] flex items-center justify-center'>
-      <div className='w-full max-w-4xl mx-auto flex flex-col md:gap-8'>
+      <div className='w-full max-w-4xl mx-auto flex flex-col md:px-5 lg:px-0 md:gap-8'>
         <h1 className='my-8 text-4xl md:text-6xl font-bold text-center whitespace-nowrap'>
           My Skill Set
         </h1>
-        <div className='flex flex-col justify-center md:flex-row md:space-x-40'>
-          <div className='w-full flex flex-col items-center md:items-start space-y-4 border rounded-2xl p-4 my-2'>
+        <div className='flex flex-col justify-center md:flex-row md:space-x-30 lg:space-x-40'>
+          <div className='w-full flex flex-col items-start space-y-4 border rounded-2xl p-4 my-2'>
             <h2 className='text-2xl font-bold'>プログラミング言語</h2>
             <SkillSheet
               name='JavaScript'
@@ -22,7 +23,7 @@ export default function Skill() {
             />
             <SkillSheet name='PHP' src='/images/php-original.svg' level={3} />
           </div>
-          <div className='w-full flex flex-col items-center md:items-start space-y-4 border rounded-2xl p-4 my-2'>
+          <div className='w-full flex flex-col items-start space-y-4 border rounded-2xl p-4 my-2'>
             <h2 className='text-2xl font-bold'>フロントエンド</h2>
             <SkillSheet
               name='React'
@@ -46,8 +47,8 @@ export default function Skill() {
             />
           </div>
         </div>
-        <div className='flex flex-col justify-center md:flex-row md:space-x-40 md:my-10'>
-          <div className='w-full flex flex-col items-center md:items-start space-y-4 border rounded-2xl p-4 my-2'>
+        <div className='flex flex-col justify-center md:flex-row md:space-x-30 lg:space-x-40 md:my-10'>
+          <div className='w-full flex flex-col items-start space-y-4 border rounded-2xl p-4 my-2'>
             <h2 className='text-2xl font-bold'>バックエンド</h2>
             <SkillSheet
               name='Laravel'
@@ -60,7 +61,7 @@ export default function Skill() {
               level={2}
             />
           </div>
-          <div className='w-full flex flex-col items-center md:items-start space-y-4 border rounded-2xl p-4 my-2'>
+          <div className='w-full flex flex-col items-start space-y-4 border rounded-2xl p-4 my-2'>
             <h2 className='text-2xl font-bold'>その他</h2>
             <SkillSheet
               name='MySQL'
@@ -81,11 +82,50 @@ export default function Skill() {
             />
           </div>
         </div>
+        <div className='w-full flex flex-col tems-start space-y-4 border rounded-2xl p-4 my-2'>
+          <h2 className='text-2xl font-bold'>プログラミング以外のスキル</h2>
+          <div className='flex flex-col md:flex-row md:space-x-37 lg:space-x-57'>
+            <div className='flex flex-col items-start space-y-4'>
+              <SkillSheet
+                name='After Effects'
+                src='/images/after-effects.png'
+                level={3}
+              />
+              <SkillSheet
+                name='Premiere Pro'
+                src='/images/premiere-pro.png'
+                level={4}
+              />
+              <SkillSheet
+                name='DaVinci Resolve'
+                src='/images/davinci-resolve-icon.png'
+                level={3}
+              />
+            </div>
+            <div className='flex flex-col items-start space-y-4 mt-4 md:mt-0'>
+              <SkillSheet
+                name='Figma'
+                src='/images/figma.png'
+                level={3}
+              />
+              <AnotherSkillSheet
+                name='English'
+                src='/images/english.svg'
+                dis='推定CEFRレベル：B2~C1(中上級〜上級)'
+              />
+              <AnotherSkillSheet
+                name='French'
+                src='/images/french.svg'
+                dis='推定CEFRレベル：B1~B2(中級〜中上級)'
+              />
+            </div>
+          </div>
+        </div>
         <div className='mt-10 w-full max-w-3xl mx-auto flex flex-col items-center justify-center'>
           <h2 className='text-xl font-bold text-center'>評価基準</h2>
           <table className='w-full border-collapse my-4'>
             <thead>
-              <tr className='border-b-2 border-gray-300'/>
+              <tr className='border-b-2 border-gray-300' />
             </thead>
             <tbody>
               <tr className='border-b border-gray-200'>
@@ -129,8 +169,8 @@ export default function Skill() {
                 </td>
               </tr>
             </tbody>
-						<thead>
-              <tr className='border-b-2 border-gray-300'/>
+            <thead>
+              <tr className='border-b-2 border-gray-300' />
             </thead>
           </table>
         </div>

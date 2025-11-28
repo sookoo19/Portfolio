@@ -28,7 +28,9 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const AboutMe: Story = {};
 
-export const Skill: Story = {args: {
+export const Skill: Story = {
+  args: {
     name: 'Skill',
     src: '/images/skills-icon.svg',
-  },};
+  },
+};
