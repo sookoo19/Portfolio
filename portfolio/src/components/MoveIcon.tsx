@@ -5,6 +5,8 @@ export interface MoveIconProps {
   name?: string;
   src: string;
   className?: string;
+  scrollTo?: string; // セクションのID
+  onClick?: () => void; // モーダルを開くなどのカスタム処理
 }
 
 function bounceEase(x: number) {
@@ -26,12 +28,24 @@ export default function MoveIcon({
   name,
   src,
   className = '',
+  scrollTo,
+  onClick,
 }: MoveIconProps) {
   const [isHovering, setIsHovering] = useState(false);
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    } else if (scrollTo) {
+      const element = document.getElementById(scrollTo);
+      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <figure className={`flex flex-col items-center gap-2 ${className}`}>
       <motion.button
+        onClick={handleClick}
         onHoverStart={() => setIsHovering(true)}
         onHoverEnd={() => setIsHovering(false)}
         animate={isHovering ? { scale: 1.2, y: 0 } : undefined}
@@ -60,14 +74,14 @@ export default function MoveIcon({
       >
         <img
           src={src}
-          alt={name ? '' : `${name}`}
+          alt={`${name}'s icon`}
           className='w-16 h-16 min-w-[4rem] min-h-[4rem] object-cover rounded-sm aspect-square flex-shrink-0'
           draggable='false'
         />
 
         {name && (
           <figcaption
-            className='text-sm text-white whitespace-nowrap select-none mt-1.5 lg:mt-2'
+            className='text-sm text-white whitespace-nowrap select-none mt-1 lg:mt-2'
             style={{
               textShadow: '0 2px 6px rgba(23, 23, 23, 0.6)',
             }}

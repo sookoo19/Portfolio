@@ -1,4 +1,5 @@
 import SkillSheet from '../components/SkillSheet.tsx';
+import AnotherSkillSheet from '../components/AnotherSkillSheet.tsx';
 
 export default function Skill() {
   return (
@@ -81,11 +82,50 @@ export default function Skill() {
             />
           </div>
         </div>
+        <div className='w-full flex flex-col items-center md:items-start space-y-4 border rounded-2xl p-4 my-2'>
+          <h2 className='text-2xl font-bold'>プログラミング以外のスキル</h2>
+          <div className='flex flex-col md:flex-row md:space-x-37 lg:space-x-57'>
+            <div className='flex flex-col items-center md:items-start space-y-4'>
+              <AnotherSkillSheet
+                name='After Effects'
+                src='/images/after-effects.png'
+                dis='使用年数：2年'
+              />
+              <AnotherSkillSheet
+                name='Premiere Pro'
+                src='/images/premiere-pro.png'
+                dis='使用年数：3年'
+              />
+              <AnotherSkillSheet
+                name='DaVinci Resolve'
+                src='/images/davinci-resolve-icon.png'
+                dis='使用年数：3年'
+              />
+            </div>
+            <div className='flex flex-col items-center md:items-start space-y-4 mt-4 md:mt-0'>
+              <AnotherSkillSheet
+                name='Figma'
+                src='/images/figma.png'
+                dis='使用年数：1年'
+              />
+              <AnotherSkillSheet
+                name='English'
+                src='/images/english.svg'
+                dis='推定CEFRレベル：B2~C1(中上級〜上級)'
+              />
+              <AnotherSkillSheet
+                name='French'
+                src='/images/french.svg'
+                dis='推定CEFRレベル：B1~B2(中級〜中上級)'
+              />
+            </div>
+          </div>
+        </div>
         <div className='mt-10 w-full max-w-3xl mx-auto flex flex-col items-center justify-center'>
           <h2 className='text-xl font-bold text-center'>評価基準</h2>
           <table className='w-full border-collapse my-4'>
             <thead>
-              <tr className='border-b-2 border-gray-300'/>
+              <tr className='border-b-2 border-gray-300' />
             </thead>
             <tbody>
               <tr className='border-b border-gray-200'>
@@ -129,8 +169,8 @@ export default function Skill() {
                 </td>
               </tr>
             </tbody>
-						<thead>
-              <tr className='border-b-2 border-gray-300'/>
+            <thead>
+              <tr className='border-b-2 border-gray-300' />
             </thead>
           </table>
         </div>

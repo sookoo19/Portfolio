@@ -36,7 +36,7 @@ export default function Profile() {
               </div>
               <div className='absolute left-[95px] md:left-[115px] top-[10px] w-3 h-3 bg-gray-600 rounded-full border-4 border-[#f2f2f2]'></div>
               <div className='ml-10 md:ml-16 flex-1'>
-                <DeatilProfile title='愛知県で生まれる' des='' />
+                <DeatilProfile title='愛知県で生まれる' des='双子の兄です。' />
               </div>
             </motion.div>
 

@@ -7,7 +7,11 @@ export interface FileIconProps {
 export default function FileIcon({ name, className = '' }: FileIconProps) {
   return (
     <figure className={`flex flex-col items-center ${className}`}>
-      <FaFolder className='w-16 h-16 flex-shrink-0' color='#88CEF7' aria-hidden />
+      <FaFolder
+        className='w-16 h-16 flex-shrink-0'
+        color='#88CEF7'
+        aria-hidden
+      />
       {name && (
         <figcaption
           className='text-sm text-white whitespace-nowrap select-none'

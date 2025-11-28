@@ -32,10 +32,18 @@ export default function RootApp() {
         }}
       />
       <App />
-      <Intro />
-      <Skill />
-      <Work />
-      <Profile />
+      <div id='intro'>
+        <Intro />
+      </div>
+      <div id='skill'>
+        <Skill />
+      </div>
+      <div id='work'>
+        <Work />
+      </div>
+      <div id='profile'>
+        <Profile />
+      </div>
     </>
   );
 }
