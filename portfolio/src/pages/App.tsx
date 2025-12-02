@@ -91,7 +91,7 @@ export default function App() {
       onPointerEnter={() => measure()}
     >
       <div className='col-start-6 col-span-2 row-start-6 row-span-2 flex items-center justify-center'>
-        <Logo />
+        
       </div>
       <div className='col-start-2 row-start-1'>
         <FileIcon name='File' />
