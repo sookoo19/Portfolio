@@ -6,7 +6,7 @@ export default function Work() {
   const [openTripostModal, setOpenTripostModal] = useState(false);
   const [openPortfolioModal, setOpenPortfolioModal] = useState(false);
   return (
-    <div className='p-4 min-h-screen flex items-center justify-center'>
+    <div className='p-4 text-[#f2f2f2] pb-10 min-h-screen flex items-center justify-center bg-black/20 rounded-[50px] lg:mx-20'>
       <div className='w-full max-w-4xl mx-auto flex flex-col items-center gap-4 md:gap-8'>
         <h1 className='text-4xl md:text-6xl font-bold whitespace-nowrap'>
           Works

@@ -3,14 +3,14 @@ import AnotherSkillSheet from '../components/AnotherSkillSheet.tsx';
 
 export default function Skill() {
   return (
-    <div className='p-4 min-h-screen flex items-center justify-center'>
+    <div className='p-4 pb-10 min-h-screen flex items-center justify-center bg-black/20 rounded-[50px] lg:mx-20'>
       <div className='w-full max-w-4xl mx-auto flex flex-col md:px-5 lg:px-0 md:gap-8'>
-        <h1 className='my-8 text-4xl md:text-6xl font-bold text-center whitespace-nowrap'>
+        <h1 className='my-8 text-4xl md:text-6xl text-[#f2f2f2] font-bold text-center whitespace-nowrap'>
           My Skill Set
         </h1>
         <div className='flex flex-col justify-center md:flex-row md:space-x-30 lg:space-x-40'>
-          <div className='w-full flex flex-col items-start space-y-4 border rounded-2xl p-4 my-2'>
-            <h2 className='text-2xl font-bold'>プログラミング言語</h2>
+          <div className='w-full flex flex-col items-start space-y-4 border border-[#f2f2f2] rounded-2xl p-4 my-2'>
+            <h2 className='text-2xl text-[#f2f2f2] font-bold'>プログラミング言語</h2>
             <SkillSheet
               name='JavaScript'
               src='/images/javascript-original.svg'
@@ -23,8 +23,8 @@ export default function Skill() {
             />
             <SkillSheet name='PHP' src='/images/php-original.svg' level={3} />
           </div>
-          <div className='w-full flex flex-col items-start space-y-4 border rounded-2xl p-4 my-2'>
-            <h2 className='text-2xl font-bold'>フロントエンド</h2>
+          <div className='w-full flex flex-col items-start space-y-4 border border-[#f2f2f2] rounded-2xl p-4 my-2'>
+            <h2 className='text-2xl text-[#f2f2f2] font-bold'>フロントエンド</h2>
             <SkillSheet
               name='React'
               src='/images/react-original.svg'
@@ -48,8 +48,8 @@ export default function Skill() {
           </div>
         </div>
         <div className='flex flex-col justify-center md:flex-row md:space-x-30 lg:space-x-40 md:my-10'>
-          <div className='w-full flex flex-col items-start space-y-4 border rounded-2xl p-4 my-2'>
-            <h2 className='text-2xl font-bold'>バックエンド</h2>
+          <div className='w-full flex flex-col items-start space-y-4 border border-[#f2f2f2] rounded-2xl p-4 my-2'>
+            <h2 className='text-2xl text-[#f2f2f2] font-bold'>バックエンド</h2>
             <SkillSheet
               name='Laravel'
               src='/images/laravel-original.svg'
@@ -61,8 +61,8 @@ export default function Skill() {
               level={2}
             />
           </div>
-          <div className='w-full flex flex-col items-start space-y-4 border rounded-2xl p-4 my-2'>
-            <h2 className='text-2xl font-bold'>その他</h2>
+          <div className='w-full flex flex-col items-start space-y-4 border border-[#f2f2f2] rounded-2xl p-4 my-2'>
+            <h2 className='text-2xl text-[#f2f2f2] font-bold'>その他</h2>
             <SkillSheet
               name='MySQL'
               src='/images/mysql-original.svg'
@@ -82,8 +82,8 @@ export default function Skill() {
             />
           </div>
         </div>
-        <div className='w-full flex flex-col tems-start space-y-4 border rounded-2xl p-4 my-2'>
-          <h2 className='text-2xl font-bold'>プログラミング以外のスキル</h2>
+        <div className='w-full flex flex-col tems-start space-y-4 border border-[#f2f2f2] rounded-2xl p-4 my-2'>
+          <h2 className='text-2xl text-[#f2f2f2] font-bold'>プログラミング以外のスキル</h2>
           <div className='flex flex-col md:flex-row md:space-x-37 lg:space-x-57'>
             <div className='flex flex-col items-start space-y-4'>
               <SkillSheet
@@ -122,17 +122,17 @@ export default function Skill() {
           </div>
         </div>
         <div className='mt-10 w-full max-w-3xl mx-auto flex flex-col items-center justify-center'>
-          <h2 className='text-xl font-bold text-center'>評価基準</h2>
-          <table className='w-full border-collapse my-4'>
+          <h2 className='text-xl text-[#f2f2f2] font-bold text-center'>評価基準</h2>
+          <table className='w-full border-collapse my-4 text-[#f2f2f2]'>
             <thead>
-              <tr className='border-b-2 border-gray-300' />
+              <tr className='border-b-2 border-gray-200' />
             </thead>
             <tbody>
               <tr className='border-b border-gray-200'>
                 <td className='py-3 pr-4'>
                   <SkillSheet level={1} size={20} />
                 </td>
-                <td className='pb-2 pt-3 pr-4'>
+                <td className='pb-2 pt-3 pr-4 '>
                   基礎レベル（本や公式ドキュメントで、基本的な概念や文法について学習）
                 </td>
               </tr>
@@ -170,7 +170,7 @@ export default function Skill() {
               </tr>
             </tbody>
             <thead>
-              <tr className='border-b-2 border-gray-300' />
+              <tr className='border-b-2 border-gray-200' />
             </thead>
           </table>
         </div>

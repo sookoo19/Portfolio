@@ -15,10 +15,10 @@ export default function AnotherSkillSheet({
     <div className={`flex flex-row items-center justify-center ${className}`}>
       {src && <img src={src} alt={name} className='h-10 w-10 mr-2' />}
       <div className='flex flex-col'>
-        <figcaption className='text-xl text-black text-left select-none'>
+        <figcaption className='text-xl text-[#f2f2f2] text-left select-none'>
           {name}
         </figcaption>
-        <div className='text-sm text-black text-left'>{dis}</div>
+        <div className='text-sm text-[#f2f2f2] text-left'>{dis}</div>
       </div>
     </div>
   );

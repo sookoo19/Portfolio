@@ -1,9 +1,9 @@
 export default function Intro() {
   return (
-    <div className='p-4 min-h-screen flex items-center justify-center'>
+    <div className='p-4 min-h-screen flex items-center justify-center bg-black/20 rounded-[50px] lg:mx-20'>
       <div className='w-full max-w-3xl mx-auto flex flex-col items-center gap-8 md:gap-12'>
         {/* About me タイトル */}
-        <h1 className='text-4xl md:text-6xl font-bold whitespace-nowrap text-center'>
+        <h1 className='text-4xl md:text-6xl text-[#f2f2f2] font-bold whitespace-nowrap text-center'>
           About me
         </h1>
 
@@ -21,11 +21,11 @@ export default function Intro() {
 
           {/* 名前と説明 */}
           <div className='flex flex-col gap-2 flex-1'>
-            <h2 className='text-2xl md:text-3xl font-bold text-center md:text-left'>
+            <h2 className='text-2xl md:text-3xl text-[#f2f2f2] font-bold text-center md:text-left'>
               Kohei SUZUKI
             </h2>
 
-            <p className='text-sm md:text-base leading-relaxed text-left'>
+            <p className='text-sm md:text-base text-[#f2f2f2] leading-relaxed text-left'>
               大学で芸術工学を学んだのち、広告制作会社でTVCMやWebムービーの制作進行に従事。その後、北アフリカにあるチュニジアで2年間、青少年の育成に従事。そこで世界におけるITの重要性、影響力を再認識し、IT業界への転職を決意、2025年4月よりプログラミングの学習を始める。
             </p>
 

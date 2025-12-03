@@ -81,7 +81,7 @@ export default function MoveIcon({
 
         {name && (
           <figcaption
-            className='text-sm lg:text-lg text-white whitespace-nowrap select-none '
+            className='text-sm lg:text-lg text-[#f2f2f2] whitespace-nowrap select-none '
             style={{
               textShadow: '0 2px 6px rgba(23, 23, 23, 0.6)',
             }}

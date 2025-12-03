@@ -105,6 +105,7 @@ export default function RootApp() {
           gradientX.set(e.clientX / window.innerWidth);
           gradientY.set(e.clientY / window.innerHeight);
         }}
+        className='space-y-20 md:space-y-40 pb-40'
       >
         <App />
         <div id='intro'>
