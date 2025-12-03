@@ -1,9 +1,7 @@
 import { motion, useMotionValue, useTransform } from 'motion/react';
 import { useState, useRef, useEffect } from 'react';
 import Logo from '../components/Logo';
-import FileIcon from '../components/FileIcon';
 import MoveIcon from '../components/MoveIcon';
-import DownScrollButton from '../components/DownScrollButton';
 import TripostModal from '../components/TripostModal';
 import PortfolioModal from '../components/PortfolioModal';
 
@@ -83,55 +81,52 @@ export default function App() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: 'easeIn' }}
       style={{ background }}
-      className='px-8 py-10 h-full max-h-screen w-full max-w-full grid grid-cols-12 grid-rows-12 gap-x-4 gap-y-8 flex items-center justify-center'
+      className='relative px-8 py-10 h-full max-h-screen w-full max-w-full grid grid-cols-12 grid-rows-12 gap-x-4 gap-y-8 flex items-center justify-center'
       onPointerMove={(e) => {
         gradientX.set(e.clientX / width);
         gradientY.set(e.clientY / height);
       }}
       onPointerEnter={() => measure()}
     >
-      <div className='col-start-6 col-span-2 row-start-6 row-span-2 flex items-center justify-center'>
-        
+      {/* 背景のロゴ */}
+      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none'>
+        <Logo />
       </div>
-      <div className='col-start-2 row-start-1'>
-        <FileIcon name='File' />
+
+      {/* 既存のコンテンツ */}
+      <div className='col-start-3 row-start-4 md:row-start-2 relative z-10'>
+        <MoveIcon name='About me' src='/images/about-me.svg' scrollTo='intro' />
       </div>
-      <div className='col-start-2 row-start-3'>
-        <MoveIcon name='About me' src='/images/Profile.jpg' scrollTo='intro' />
-      </div>
-      <div className='col-start-2 row-start-5'>
+      <div className='col-start-6 col-span-2 row-start-4 md:row-start-2 relative z-10'>
         <MoveIcon
           name='Skills'
           src='/images/skills-icon.svg'
           scrollTo='skill'
         />
       </div>
-      <div className='col-start-2 row-start-7'>
+      <div className='col-start-3 row-start-9 md:row-start-11 relative z-10'>
         <MoveIcon
           name='Tripost'
           src='/images/tripost/icon-192.svg'
           onClick={() => setOpenTripostModal(true)}
         />
       </div>
-      <div className='col-start-2 row-start-9'>
+      <div className='col-start-6 col-span-2 row-start-9 md:row-start-11 relative z-10'>
         <MoveIcon name='Works' src='/images/mywork-icon.svg' scrollTo='work' />
       </div>
-      <div className='col-start-2 row-start-11'>
+      <div className='col-start-10 row-start-4 md:row-start-2 relative z-10'>
         <MoveIcon
           name='Profile'
-          src='/images/profile-icon.jpg'
+          src='/images/profile-icon.svg'
           scrollTo='profile'
         />
       </div>
-      <div className='col-start-3 row-start-11'>
+      <div className='col-start-10 row-start-9 md:row-start-11 relative z-10'>
         <MoveIcon
           name='This site'
-          src='/images/.jpg'
+          src='/images/this-page.svg'
           onClick={() => setOpenPortfolioModal(true)}
         />
-      </div>
-      <div className='col-start-6 col-span-2 row-start-11 row-span-2 flex items-center justify-center'>
-        <DownScrollButton size='large' />
       </div>
 
       {/* モーダル */}

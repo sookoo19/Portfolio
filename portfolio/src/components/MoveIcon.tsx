@@ -75,13 +75,13 @@ export default function MoveIcon({
         <img
           src={src}
           alt={`${name}'s icon`}
-          className='w-16 h-16 min-w-[4rem] min-h-[4rem] object-cover rounded-sm aspect-square flex-shrink-0'
+          className='w-16 h-16 md:h-20 md:w-20 lg:w-28 lg:h-28 min-w-[4rem] min-h-[4rem] object-cover rounded-sm aspect-square flex-shrink-0'
           draggable='false'
         />
 
         {name && (
           <figcaption
-            className='text-sm text-white whitespace-nowrap select-none mt-1 lg:mt-2'
+            className='text-sm lg:text-lg text-white whitespace-nowrap select-none '
             style={{
               textShadow: '0 2px 6px rgba(23, 23, 23, 0.6)',
             }}

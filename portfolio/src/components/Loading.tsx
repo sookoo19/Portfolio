@@ -28,9 +28,10 @@ const pathVariants: Variants = {
   },
 };
 
+
 export default function Loading() {
   return (
-    <div className='flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-purple-600'>
+    <div className='flex items-center justify-center min-h-screen bg-black'>
       <motion.svg
         width='700'
         height='500'
