@@ -10,7 +10,7 @@ export default function Profile() {
   };
 
   return (
-    <div className='p-4 min-h-screen bg-[#f2f2f2] flex items-center justify-center'>
+    <div className='p-4 min-h-screen flex items-center justify-center'>
       <div className='w-full max-w-4xl mx-auto flex flex-col items-center'>
         <h1 className='my-8 text-4xl md:text-6xl font-bold whitespace-nowrap'>
           Profile

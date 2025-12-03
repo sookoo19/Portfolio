@@ -3,7 +3,7 @@ import AnotherSkillSheet from '../components/AnotherSkillSheet.tsx';
 
 export default function Skill() {
   return (
-    <div className='p-4 min-h-screen bg-[#f2f2f2] flex items-center justify-center'>
+    <div className='p-4 min-h-screen flex items-center justify-center'>
       <div className='w-full max-w-4xl mx-auto flex flex-col md:px-5 lg:px-0 md:gap-8'>
         <h1 className='my-8 text-4xl md:text-6xl font-bold text-center whitespace-nowrap'>
           My Skill Set
