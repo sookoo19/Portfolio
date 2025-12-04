@@ -15,16 +15,16 @@ export default function Work() {
           私が自主制作した制作物です。クリックすると詳細をご覧いただけます。
         </h2>
         <div className='w-full flex flex-col md:flex-row items-center md:items-start gap-8'>
-          <div className='flex flex-col items-center'>
+          <div className='w-full flex flex-col items-center'>
             <button
               onClick={() => setOpenTripostModal(true)}
-              className='w-full rounded-sm cursor-pointer'
+              className='rounded-sm cursor-pointer'
               aria-label='Open modal'
             >
               <img
                 src='/images/tripost/ogp.jpg'
                 alt='Product Image1'
-                className=' w-full object-cover aspect-[16/10] rounded-sm shadow-lg hover:shadow-xl hover:scale-105 transform duration-200 ease-in-out'
+                className='object-cover aspect-[16/10] rounded-sm shadow-lg hover:shadow-xl hover:scale-105 transform duration-200 ease-in-out'
                 draggable='false'
               />
             </button>
@@ -32,22 +32,42 @@ export default function Work() {
               旅行共有SNS「Tripost」
             </figcaption>
           </div>
-          <div className='flex flex-col items-center'>
+          <div className='w-full flex flex-col items-center'>
             <button
               onClick={() => setOpenPortfolioModal(true)}
-              className='w-full rounded-sm cursor-pointer'
+              className='rounded-sm cursor-pointer'
               aria-label='Open modal'
             >
               <img
-                src='/images/tripost/ogp.jpg'
-                alt='Product Image1'
-                className=' w-full object-cover aspect-[16/10] rounded-sm shadow-lg hover:shadow-xl hover:scale-105 transform duration-200 ease-in-out'
+                src='/images/portfolio/portfolio-site.png'
+                alt='Product Image2'
+                className='object-cover aspect-[16/10] rounded-sm shadow-lg hover:shadow-xl hover:scale-105 transform duration-200 ease-in-out'
                 draggable='false'
               />
             </button>
             <figcaption className='text-lg mt-3'>
               ポートフォリオサイト
             </figcaption>
+          </div>
+        </div>
+        <div className='w-full flex flex-col md:flex-row items-center md:items-start gap-8 mt-4'>
+          <div className='w-full flex flex-col items-center opacity-60'>
+            <img
+              src='/images/ComingSoon.svg'
+              alt='Product Image3'
+              className='object-cover aspect-[16/10] rounded-sm shadow-lg'
+              draggable='false'
+            />
+            <figcaption className='text-lg mt-3'>Coming Soon...</figcaption>
+          </div>
+          <div className='w-full flex flex-col items-center opacity-60'>
+            <img
+              src='/images/ComingSoon.svg'
+              alt='Product Image4'
+              className='object-cover aspect-[16/10] rounded-sm shadow-lg'
+              draggable='false'
+            />
+            <figcaption className='text-lg mt-3'>Coming Soon...</figcaption>
           </div>
         </div>
       </div>

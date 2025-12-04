@@ -5,11 +5,9 @@ import MoveIcon from '../components/MoveIcon';
 import TripostModal from '../components/TripostModal';
 import PortfolioModal from '../components/PortfolioModal';
 
-
 export default function App() {
   const [openTripostModal, setOpenTripostModal] = useState(false);
   const [openPortfolioModal, setOpenPortfolioModal] = useState(false);
-  
 
   return (
     <motion.div
@@ -53,7 +51,7 @@ export default function App() {
       </div>
       <div className='col-start-10 row-start-9 md:row-start-11 relative z-10'>
         <MoveIcon
-          name='This site'
+          name='This site '
           src='/images/this-page.svg'
           onClick={() => setOpenPortfolioModal(true)}
         />

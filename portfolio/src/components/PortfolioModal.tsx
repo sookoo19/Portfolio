@@ -73,7 +73,7 @@ export default function PortfolioModal({
             {/* モーダル内容 */}
             <div className='flex flex-col lg:flex-row'>
               <div className='flex flex-col lg:w-2/5'>
-                <h3 className='text-xl md:text-3xl font-bold mb-4'>
+                <h3 className='text-gray-700 text-xl md:text-3xl font-bold mb-4'>
                   ポートフォリオサイト
                 </h3>
                 <div className='text-base text-gray-700 leading-relaxed'>

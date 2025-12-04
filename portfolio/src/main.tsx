@@ -15,16 +15,14 @@ export default function RootApp() {
   const { scrollYProgress } = useScroll();
   const gradientX = useMotionValue(0.5);
   const gradientY = useMotionValue(0.5);
-  const background = useTransform(
-    [gradientX, gradientY],
-    ([gx, gy]) => {
-      const x = (gx as number) * 100;
-      const y = (gy as number) * 100;
-      
-      // 回転効果を追加
-      const angle = Math.atan2(y - 50, x - 50) * (180 / Math.PI);
-      
-      return `
+  const background = useTransform([gradientX, gradientY], ([gx, gy]) => {
+    const x = (gx as number) * 100;
+    const y = (gy as number) * 100;
+
+    // 回転効果を追加
+    const angle = Math.atan2(y - 50, x - 50) * (180 / Math.PI);
+
+    return `
         radial-gradient(
           ellipse 200% 200% 
           at ${x}% ${y}%,
@@ -67,20 +65,19 @@ export default function RootApp() {
         ),
         radial-gradient(
           ellipse 150% 150% 
-          at ${50 + Math.cos(angle * Math.PI / 180) * 30}% ${50 + Math.sin(angle * Math.PI / 180) * 30}%,
+          at ${50 + Math.cos((angle * Math.PI) / 180) * 30}% ${50 + Math.sin((angle * Math.PI) / 180) * 30}%,
           rgba(255, 140, 0, 0.7) 0%,
           transparent 35%
         ),
         radial-gradient(
           ellipse 160% 160% 
-          at ${50 - Math.cos(angle * Math.PI / 180) * 30}% ${50 - Math.sin(angle * Math.PI / 180) * 30}%,
+          at ${50 - Math.cos((angle * Math.PI) / 180) * 30}% ${50 - Math.sin((angle * Math.PI) / 180) * 30}%,
           rgba(70, 130, 180, 0.7) 0%,
           transparent 35%
         ),
         linear-gradient(to right, #FF8C42 0%, #FF6B35 25%, #1E90FF 50%, #4169E1 75%, #1E90FF 100%)
       `.replace(/\s+/g, ' ');
-    }
-  );
+  });
 
   return (
     <>
@@ -96,12 +93,12 @@ export default function RootApp() {
           originX: 0,
           zIndex: 9999,
           opacity: 0.8,
-          backgroundColor: '#ff0088',
+          backgroundColor: '#f2f2f2',
         }}
       />
       <motion.div
         style={{ background }}
-        onPointerMove={(e) => {
+        onPointerMove={e => {
           gradientX.set(e.clientX / window.innerWidth);
           gradientY.set(e.clientY / window.innerHeight);
         }}

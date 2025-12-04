@@ -9,8 +9,8 @@ export function Logo() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <motion.img 
-        src='/images/logo.svg' 
+      <motion.img
+        src='/images/logo.svg'
         className='w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] lg:w-[30rem] lg:h-[30rem]'
       />
     </motion.div>

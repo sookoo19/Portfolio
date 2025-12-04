@@ -10,7 +10,9 @@ export default function Skill() {
         </h1>
         <div className='flex flex-col justify-center md:flex-row md:space-x-30 lg:space-x-40'>
           <div className='w-full flex flex-col items-start space-y-4 border border-[#f2f2f2] rounded-2xl p-4 my-2'>
-            <h2 className='text-2xl text-[#f2f2f2] font-bold'>プログラミング言語</h2>
+            <h2 className='text-2xl text-[#f2f2f2] font-bold'>
+              プログラミング言語
+            </h2>
             <SkillSheet
               name='JavaScript'
               src='/images/javascript-original.svg'
@@ -24,7 +26,9 @@ export default function Skill() {
             <SkillSheet name='PHP' src='/images/php-original.svg' level={3} />
           </div>
           <div className='w-full flex flex-col items-start space-y-4 border border-[#f2f2f2] rounded-2xl p-4 my-2'>
-            <h2 className='text-2xl text-[#f2f2f2] font-bold'>フロントエンド</h2>
+            <h2 className='text-2xl text-[#f2f2f2] font-bold'>
+              フロントエンド
+            </h2>
             <SkillSheet
               name='React'
               src='/images/react-original.svg'
@@ -83,7 +87,9 @@ export default function Skill() {
           </div>
         </div>
         <div className='w-full flex flex-col tems-start space-y-4 border border-[#f2f2f2] rounded-2xl p-4 my-2'>
-          <h2 className='text-2xl text-[#f2f2f2] font-bold'>プログラミング以外のスキル</h2>
+          <h2 className='text-2xl text-[#f2f2f2] font-bold'>
+            プログラミング以外のスキル
+          </h2>
           <div className='flex flex-col md:flex-row md:space-x-37 lg:space-x-57'>
             <div className='flex flex-col items-start space-y-4'>
               <SkillSheet
@@ -103,11 +109,7 @@ export default function Skill() {
               />
             </div>
             <div className='flex flex-col items-start space-y-4 mt-4 md:mt-0'>
-              <SkillSheet
-                name='Figma'
-                src='/images/figma.png'
-                level={3}
-              />
+              <SkillSheet name='Figma' src='/images/figma.png' level={3} />
               <AnotherSkillSheet
                 name='English'
                 src='/images/english.svg'
@@ -122,7 +124,9 @@ export default function Skill() {
           </div>
         </div>
         <div className='mt-10 w-full max-w-3xl mx-auto flex flex-col items-center justify-center'>
-          <h2 className='text-xl text-[#f2f2f2] font-bold text-center'>評価基準</h2>
+          <h2 className='text-xl text-[#f2f2f2] font-bold text-center'>
+            評価基準
+          </h2>
           <table className='w-full border-collapse my-4 text-[#f2f2f2]'>
             <thead>
               <tr className='border-b-2 border-gray-200' />
