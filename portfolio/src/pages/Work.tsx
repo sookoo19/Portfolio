@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import TripostModal from '../components/TripostModal.tsx';
-import PortfolioModal from '../components/PortfolioModal.tsx';
+import TripostModal from '../components/TripostModal';
+import PortfolioModal from '../components/PortfolioModal';
 
 export default function Work() {
   const [openTripostModal, setOpenTripostModal] = useState(false);
