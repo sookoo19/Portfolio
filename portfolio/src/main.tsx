@@ -1,12 +1,14 @@
 import { StrictMode, Suspense, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import { motion, useScroll, useTransform, useMotionValue } from 'motion/react';
+import { CiCircleChevUp } from "react-icons/ci";
 import './index.css';
 import Loading from './components/Loading';
 import Intro from './pages/Intro';
 import Work from './pages/Work';
 import Profile from './pages/Profile';
 import Skill from './pages/Skill';
+import Footer from './components/Fotter';
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 const App = lazy(() => sleep(3500).then(() => import('./pages/App')));
@@ -102,8 +104,8 @@ export default function RootApp() {
           gradientX.set(e.clientX / window.innerWidth);
           gradientY.set(e.clientY / window.innerHeight);
         }}
-        className='space-y-20 md:space-y-40 pb-40'
-      > <div id='app'>
+        className='space-y-20 md:space-y-40'>
+        <div id='app'>
           <App />
         </div>
         <div id='intro'>
@@ -118,7 +120,18 @@ export default function RootApp() {
         <div id='profile'>
           <Profile />
         </div>
+        <div className='flex items-center justify-center'>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className='text-[#f2f2f2] text-lg flex flex-col items-center gap-2 cursor-pointer'
+          >
+            <CiCircleChevUp className='h-16 w-16'/>
+            <span>Back to Top</span>
+          </button>
+        </div>
+        <Footer />
       </motion.div>
+      
     </>
   );
 }

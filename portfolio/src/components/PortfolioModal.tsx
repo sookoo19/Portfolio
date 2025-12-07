@@ -10,7 +10,9 @@ export default function PortfolioModal({
   isOpen,
   onClose,
 }: PortfolioModalProps) {
-  const [mainSrc, setMainSrc] = useState('/images/portfolio/portfolio-site.png');
+  const [mainSrc, setMainSrc] = useState(
+    '/images/portfolio/portfolio-site.png'
+  );
   const [caption, setCaption] = useState('Top画面');
   const [fadeIn, setFadeIn] = useState(true);
 
@@ -95,7 +97,8 @@ export default function PortfolioModal({
                 </h3>
                 <div className='text-base text-gray-700 leading-relaxed'>
                   <p className='mb-2'>
-                    自身のスキルと制作物を紹介するポートフォリオサイトです。Motion（Framer Motion）を活用した滑らかなアニメーションと、カーソルに連動する動的なグラデーション背景が特徴です。Storybookによるコンポーネント駆動開発を採用し、保守性の高い設計を実現しました。
+                    自身のスキルと制作物を紹介するポートフォリオサイトです。Motion（Framer
+                    Motion）を活用した滑らかなアニメーションと、カーソルに連動する動的なグラデーション背景が特徴です。Storybookによるコンポーネント駆動開発を採用し、保守性の高い設計を実現しました。
                   </p>
                   <p>
                     <a
@@ -136,7 +139,8 @@ export default function PortfolioModal({
                     <h4 className='text-lg font-bold mt-6 mb-2'>使用技術</h4>
                     <div className='space-y-2 text-sm text-gray-700'>
                       <div>
-                        <strong>フロントエンド —</strong> React, TypeScript, Tailwind CSS
+                        <strong>フロントエンド —</strong> React, TypeScript,
+                        Tailwind CSS
                       </div>
                       <div>
                         <strong>アニメーション —</strong> Motion (Framer Motion)
@@ -171,10 +175,7 @@ export default function PortfolioModal({
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
-                      handleImageChange(
-                        '/images/portfolio/me.png',
-                        '自己紹介'
-                      )
+                      handleImageChange('/images/portfolio/me.png', '自己紹介')
                     }
                   />
                   <img
@@ -219,10 +220,7 @@ export default function PortfolioModal({
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
-                      handleImageChange(
-                        '/images/portfolio/profile.png',
-                        '経歴'
-                      )
+                      handleImageChange('/images/portfolio/profile.png', '経歴')
                     }
                   />
                 </div>
