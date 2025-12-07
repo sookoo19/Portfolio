@@ -28,7 +28,7 @@ export default function App() {
       <div className='col-start-6 col-span-2 row-start-4 md:row-start-2 relative z-10'>
         <MoveIcon
           name='Skills'
-          src='./skills-icon.svg'
+          src='./images/skills-icon.svg'
           scrollTo='skill'
         />
       </div>
