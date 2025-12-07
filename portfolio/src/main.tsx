@@ -103,8 +103,9 @@ export default function RootApp() {
           gradientY.set(e.clientY / window.innerHeight);
         }}
         className='space-y-20 md:space-y-40 pb-40'
-      >
-        <App />
+      > <div id='app'>
+          <App />
+        </div>
         <div id='intro'>
           <Intro />
         </div>

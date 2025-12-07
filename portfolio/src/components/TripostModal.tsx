@@ -11,6 +11,23 @@ export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
   const [caption, setCaption] = useState('Welcomeページ');
   const [fadeIn, setFadeIn] = useState(true);
 
+  // 画像のプリロード
+  useEffect(() => {
+    const images = [
+      '/images/tripost/welcome.png',
+      '/images/tripost/register.png',
+      '/images/tripost/help.png',
+      '/images/tripost/home.png',
+      '/images/tripost/profile.png',
+      '/images/tripost/post_detail.png',
+    ];
+
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   // 画像切り替え時にフェード効果
   const handleImageChange = (src: string, cap: string) => {
     setFadeIn(false);
@@ -237,7 +254,7 @@ export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
                   />
                 </div>
                 <figcaption
-                  className={`mt-2 text-center lg:ml-6 transition-opacity duration-500 ease-in-out ${fadeIn ? 'opacity-100' : 'opacity-0'}`}
+                  className={`mt-2 text-gray-700 text-center lg:ml-6 transition-opacity duration-500 ease-in-out ${fadeIn ? 'opacity-100' : 'opacity-0'}`}
                 >
                   {caption}
                 </figcaption>

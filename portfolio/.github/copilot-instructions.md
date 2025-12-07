@@ -1,48 +1,150 @@
-## 目的
-このファイルは、このリポジトリ内で AI コーディングエージェントが短時間で生産的に作業できるよう、プロジェクト固有の構造・ワークフロー・注意点を手早く示すことを目的とします。
+# Portfolio プロジェクト - AI コーディングエージェント ガイド
 
-## 要点サマリ
-- フレームワーク: Vite + React + TypeScript（エントリ: `src/main.tsx` → `src/App.tsx`）
-- ビルド: `npm run build` はまず `tsc -b`（型チェック／プロジェクト参照）を実行し、続いて `vite build` を実行します。
-- 開発: `npm run dev`（Vite の HMR）
-- Lint: `npm run lint`（設定ファイル: `eslint.config.js`）
+## プロジェクト概要
+個人ポートフォリオサイト（SPA）。スクロールベースの単一ページレイアウトで、アニメーション豊富なインタラクティブ UI が特徴。
 
-## アーキテクチャ（短く）
-- 単一フロントエンド SPA。ソースは `src/` に格納。
-- 画像・静的アセット: `src/assets/`（ソースに直接 import）およびルート直下/public 的に扱われるファイルは `'/vite.svg'` のようにルート参照で読み込まれる（`public/` に置かれる想定）。
-- TypeScript はプロジェクト参照を使っており、`tsconfig.json` が `tsconfig.app.json` と `tsconfig.node.json` を参照します。`tsc -b` は型チェックと依存関係解決のために実行されます（`noEmit: true` 設定あり）。
+**技術スタック**: Vite + React 19 + TypeScript + Tailwind CSS 4 + Motion (旧 Framer Motion)
 
-## 主要ファイル（参照先）
-- `package.json` — スクリプト、依存関係（`dev`/`build`/`lint`）
-- `vite.config.ts` — Vite 設定、現在は `@vitejs/plugin-react-swc` を使用
-- `tsconfig.app.json`, `tsconfig.node.json` — コンパイラ設定（厳格モード、noEmit）
-- `eslint.config.js` — ESLint の拡張・ルール（`@typescript-eslint`, `react-hooks`, `react-refresh` 等）
-- `src/main.tsx`, `src/App.tsx` — エントリとルートコンポーネントの例
+## アーキテクチャ
 
-## 具体的なワークフローとコマンド
-- 開発サーバを起動: `npm install` した上で `npm run dev`（ブラウザで HMR が有効）
-- 本番ビルド: `npm run build`（`tsc -b` による型チェックを含む）
-- プレビュー: `npm run preview`（ビルド出力のローカルプレビュー）
-- Lint 実行: `npm run lint`（必要なら `npx prettier --write .` でフォーマット）
+### アプリケーション構造
+```
+src/main.tsx           # ルートエントリポイント（グラデーション背景、レイジーローディング、スクロール制御）
+  └─ src/pages/App.tsx # ランディングページ（グリッドレイアウトの MoveIcon 群）
+  └─ src/pages/Intro.tsx, Profile.tsx, Skill.tsx, Work.tsx  # スクロールセクション
+  └─ src/components/   # 再利用可能なコンポーネント
+```
 
-## コードパターンと注意点（このリポジトリ固有）
-- 画像取り扱いの例:
-  - ルートの静的ファイル: `import viteLogo from '/vite.svg'`（`public/` 配下想定）
-  - ソース内アセット: `import reactLogo from './assets/react.svg'`（`src/assets`）
-- TypeScript に関しては厳格モードが有効（`strict: true` など）。型の不整合はビルド段階で止められるため、修正時は `tsc -b` を意識する。
-- ESLint は `eslint.config.js` で設定。新しいルールやプラグインを追加する場合はこのファイルを編集する。
+**重要**: `main.tsx` は `App.tsx` を 3.5 秒の遅延付きで lazy load する（`Loading` コンポーネント表示）。`RootApp` が実際のルートで、動的グラデーション背景とスクロールベースのページ管理を実装。
 
-## 変更のヒント（エージェント向け指示）
-- 小さな UI 作業（コンポーネント追加/修正）: `src/components/` を作って `tsx` を追加（このリポジトリはまだ小さいため、既存は `src/App.tsx` を参照）。
-- ビルドを壊さない: 変更後は必ず `npm run build` をローカルで通す（`tsc -b` が失敗すると CI/ビルドが止まる）。
-- Lint とフォーマット: `npm run lint` の実行を推奨。Prettier が devDependencies に入っているため `npx prettier --write <paths>` を使って整形可能。
+### ページ構成パターン
+- **セクションベース**: 各ページ（Intro, Profile, Skill, Work）は `id` 属性を持つ
+- **ナビゲーション**: `MoveIcon` コンポーネントが `scrollTo` prop で `document.getElementById(id).scrollIntoView()` を実行
+- **モーダル**: `TripostModal`, `PortfolioModal` が `onClick` prop で開閉（`AnimatePresence` + Portal パターン使用）
 
-## 既知の欠落 / 注意してほしいこと
-- テストフレームワークは見当たりません（ユニットテストは現状無し）。
-- GitHub Actions 等の CI 設定はリポジトリに無いようです。CI に接続する場合は `npm run build` と `npm run lint` をステップに含めると安全です。
+## 開発ワークフロー
 
-## 参考例（編集例）
-- 新しいコンポーネント作成: `src/components/MyWidget.tsx` を追加 → `src/App.tsx` で import し動作確認 → `npm run build`。
+### 必須コマンド
+```bash
+npm run dev              # 開発サーバ起動（ポート 5173）
+npm run build            # 型チェック → 本番ビルド（tsc -b && vite build）
+npm run lint:fix         # ESLint + Prettier 自動修正
+npm run storybook        # Storybook 起動（ポート 6006）
+```
 
----
-質問や補足したいローカルルール（ファイル配置、命名規約、CI の要件など）があれば教えてください。必要ならこのファイルを更新して具体例（コンポーネント雛形、lint autofix コマンド等）を追加します。
+**ビルド前の必須チェック**: `npm run build` は必ず成功させる（`tsc -b` が失敗すると本番ビルドできない）
+
+### Storybook 統合
+- **コンポーネント開発**: `src/components/*.stories.ts(x)` で管理
+- **テスト**: Vitest + Playwright によるブラウザテスト（`vitest.config.ts` の Storybook プラグイン使用）
+- **パターン**: すべての Story ファイルは `Meta` と `StoryObj` を export（例: `Button.stories.ts`）
+
+## コーディング規約
+
+### アニメーション（Motion）
+**重要**: Motion ライブラリは 2 つのインポートパスが混在
+```tsx
+// 推奨（新しい Motion）
+import { motion, AnimatePresence } from 'motion/react';
+
+// 非推奨（古い Framer Motion が残存）
+import { motion } from 'framer-motion';  // SkillSheet.tsx のみ使用中
+```
+**今後の変更**: 新しいコンポーネントは `motion/react` を使用。`SkillSheet.tsx` は将来的に移行が必要。
+
+### コンポーネントパターン
+```tsx
+// 典型的な Props 定義（export interface で Storybook 対応）
+export interface MoveIconProps {
+  name?: string;
+  src: string;
+  scrollTo?: string;   // セクション ID でスクロール
+  onClick?: () => void; // カスタムアクション（モーダル開閉など）
+}
+
+// Tailwind クラスの使用例（カスタム色は #f2f2f2 など直指定が多い）
+className='text-[#f2f2f2] bg-black/20 rounded-[50px]'
+```
+
+### 画像・アセット管理
+```tsx
+// public/ 配下の画像（絶対パス）
+src='/images/profile-icon.svg'
+src='/images/portfolio/screenshot1.png'
+
+// Vite によるバンドル（import 不要、パスのみ指定）
+```
+
+### TypeScript 設定
+- **strict モード有効**: `noUnusedLocals`, `noUnusedParameters` でクリーンなコードを強制
+- **プロジェクト参照**: `tsconfig.json` が `tsconfig.app.json`（src）と `tsconfig.node.json`（Vite 設定）を参照
+- **noEmit: true**: Vite がトランスパイル担当、TypeScript は型チェックのみ
+
+### スタイリング
+- **Tailwind CSS 4**: `src/index.css` で `@import 'tailwindcss';` のみ（設定は `postcss.config.cjs`）
+- **カスタム CSS**: `components/button.css` のようにコンポーネント固有 CSS ファイルを許容
+- **アニメーション**: Motion の `whileInView`, `whileHover` を多用（例: `SkillSheet` のスター評価）
+
+## プロジェクト固有の注意点
+
+### 1. スクロール制御
+`main.tsx` で `useScroll` と `useTransform` を使用し、グラデーション背景がマウス位置に追従。新しいセクション追加時は：
+- ページコンポーネントに `id="section-name"` を設定
+- `App.tsx` の `MoveIcon` に `scrollTo="section-name"` を追加
+
+### 2. モーダルの実装パターン
+```tsx
+// 状態管理（親コンポーネント）
+const [openModal, setOpenModal] = useState(false);
+
+// モーダルコンポーネント（AnimatePresence で開閉アニメーション）
+<AnimatePresence>
+  {isOpen && (
+    <motion.div onClick={onClose} /* 背景クリックで閉じる */>
+      <motion.div onClick={e => e.stopPropagation()} /* コンテンツ */>
+```
+
+### 3. Storybook での型定義
+```tsx
+// コンポーネント
+export interface ButtonProps { ... }
+
+// Story ファイル
+const meta = {
+  component: Button,
+  tags: ['autodocs'],  // 自動ドキュメント生成
+} satisfies Meta<typeof Button>;
+```
+
+### 4. 既知の技術的負債
+- `SkillSheet.tsx` が `framer-motion` を使用（他は `motion/react`）
+- ユニットテストなし（Storybook のブラウザテストのみ）
+- ESLint 設定が Prettier プラグイン未反映（`lint:fix` スクリプトで対応中）
+
+## 新機能追加の典型フロー
+
+### 新しいコンポーネント作成
+1. `src/components/NewComponent.tsx` 作成（`export interface NewComponentProps` を定義）
+2. `src/components/NewComponent.stories.tsx` 作成（Storybook 確認）
+3. 親コンポーネントから import して使用
+4. `npm run lint:fix && npm run build` で検証
+
+### 新しいページセクション追加
+1. `src/pages/NewSection.tsx` 作成（`id="new-section"` 設定）
+2. `main.tsx` の `RootApp` 内に `<NewSection />` 追加
+3. `App.tsx` に対応する `MoveIcon` 追加（`scrollTo="new-section"`）
+4. アイコン画像を `public/images/` に配置
+
+## トラブルシューティング
+
+### ビルドエラー
+- **型エラー**: `tsc -b` を個別実行して原因特定
+- **Vite エラー**: `node_modules/.vite/` 削除後 `npm run dev` 再起動
+
+### Storybook が起動しない
+- `npm run storybook` 前に `npm install` 実行
+- `.storybook/vitest.setup.ts` の存在確認
+
+### Motion アニメーションが動かない
+- `motion/react` と `framer-motion` の混在確認
+- `viewport={{ once: true }}` の有無（初回表示のみアニメーション）

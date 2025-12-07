@@ -10,9 +10,26 @@ export default function PortfolioModal({
   isOpen,
   onClose,
 }: PortfolioModalProps) {
-  const [mainSrc, setMainSrc] = useState('/images/tripost/welcome.png');
-  const [caption, setCaption] = useState('Welcomeページ');
+  const [mainSrc, setMainSrc] = useState('/images/portfolio/portfolio-site.png');
+  const [caption, setCaption] = useState('Top画面');
   const [fadeIn, setFadeIn] = useState(true);
+
+  // 画像のプリロード
+  useEffect(() => {
+    const images = [
+      '/images/portfolio/portfolio-site.png',
+      '/images/portfolio/me.png',
+      '/images/portfolio/skill.png',
+      '/images/portfolio/work.png',
+      '/images/portfolio/modal.png',
+      '/images/portfolio/profile.png',
+    ];
+
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   // 画像切り替え時にフェード効果
   const handleImageChange = (src: string, cap: string) => {
@@ -37,8 +54,8 @@ export default function PortfolioModal({
     return () => {
       window.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = 'unset';
-      setMainSrc('/images/tripost/welcome.png');
-      setCaption('Welcomeページ');
+      setMainSrc('/images/portfolio/portfolio-site.png');
+      setCaption('Top画面');
       setFadeIn(true);
     };
   }, [isOpen, onClose]);
@@ -78,29 +95,11 @@ export default function PortfolioModal({
                 </h3>
                 <div className='text-base text-gray-700 leading-relaxed'>
                   <p className='mb-2'>
-                    ポートフォリオサイトを作成しました（本サイト）。
+                    自身のスキルと制作物を紹介するポートフォリオサイトです。Motion（Framer Motion）を活用した滑らかなアニメーションと、カーソルに連動する動的なグラデーション背景が特徴です。Storybookによるコンポーネント駆動開発を採用し、保守性の高い設計を実現しました。
                   </p>
                   <p>
                     <a
-                      href='https://mytripost.com'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='inline-flex flex-row items-center text-[#039be5] hover:text-[#026ca0]'
-                    >
-                      <img
-                        src='/images/tripost/icon-192.png'
-                        alt='Tripost Icon'
-                        draggable='false'
-                        className='w-8 h-auto object-cover aspect-square cursor-pointer'
-                      />
-                      <span className='text-sm md:text-base'>
-                        Tripost - Welcomeページ
-                      </span>
-                    </a>
-                  </p>
-                  <p>
-                    <a
-                      href='https://github.com/sookoo19/Tripost'
+                      href='https://github.com/sookoo19/Portfolio'
                       target='_blank'
                       rel='noopener noreferrer'
                       className='inline-flex flex-row items-center text-[#039be5] hover:text-[#026ca0]'
@@ -117,7 +116,7 @@ export default function PortfolioModal({
                       <span className='text-sm md:text-base'>Github</span>
                     </a>
                   </p>
-                  <p className='mt-1'>
+                  <p className='mt-1 hidden'>
                     <a
                       href='https://qiita.com/sookoo19/items/30b858ce211d8b409fac'
                       target='_blank'
@@ -137,18 +136,16 @@ export default function PortfolioModal({
                     <h4 className='text-lg font-bold mt-6 mb-2'>使用技術</h4>
                     <div className='space-y-2 text-sm text-gray-700'>
                       <div>
-                        <strong>フロントエンド —</strong> React.js, Inertia.js,
-                        Tailwind CSS
+                        <strong>フロントエンド —</strong> React, TypeScript, Tailwind CSS
                       </div>
                       <div>
-                        <strong>バックエンド —</strong> Laravel, Redis
+                        <strong>アニメーション —</strong> Motion (Framer Motion)
                       </div>
                       <div>
-                        <strong>インフラ / CI —</strong> Docker, Docker Compose,
-                        AWS (EC2 / RDS / Route 53 / S3), Nginx, Github Actions
+                        <strong>開発環境 —</strong> Storybook, ESLint, Prettier
                       </div>
                       <div>
-                        <strong>その他 —</strong> Mailgun, Google Maps API
+                        <strong>インフラ —</strong> GitHub Pages
                       </div>
                     </div>
                   </div>
@@ -157,74 +154,74 @@ export default function PortfolioModal({
               <div className='flex flex-col lg:w-3/5'>
                 <div className='flex flex-row flex-wrap gap-2 mt-6 lg:mt-0 lg:ml-6 items-center md:justify-center '>
                   <img
-                    src='/images/tripost/welcome.png'
-                    alt='Tripost Detail'
+                    src='/images/portfolio/portfolio-site.png'
+                    alt='site top'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/welcome.png',
-                        'Welcomeページ'
+                        '/images/portfolio/portfolio-site.png',
+                        'Top画面'
                       )
                     }
                   />
                   <img
-                    src='/images/tripost/register.png'
+                    src='/images/portfolio/me.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/register.png',
-                        '新規登録ページ'
+                        '/images/portfolio/me.png',
+                        '自己紹介'
                       )
                     }
                   />
                   <img
-                    src='/images/tripost/help.png'
+                    src='/images/portfolio/skill.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/help.png',
-                        'お問い合わせページ'
+                        '/images/portfolio/skill.png',
+                        '使用技術'
                       )
                     }
                   />
                   <img
-                    src='/images/tripost/home.png'
+                    src='/images/portfolio/work.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/home.png',
-                        '投稿一覧ページ'
+                        '/images/portfolio/work.png',
+                        '制作物一覧'
                       )
                     }
                   />
                   <img
-                    src='/images/tripost/profile.png'
+                    src='/images/portfolio/modal.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/profile.png',
-                        'プロフィールページ'
+                        '/images/portfolio/modal.png',
+                        'モーダル表示'
                       )
                     }
                   />
                   <img
-                    src='/images/tripost/post_detail.png'
+                    src='/images/portfolio/profile.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/post_detail.png',
-                        '投稿詳細ページ'
+                        '/images/portfolio/profile.png',
+                        '経歴'
                       )
                     }
                   />
@@ -238,7 +235,7 @@ export default function PortfolioModal({
                   />
                 </div>
                 <figcaption
-                  className={`mt-2 text-center lg:ml-6 transition-opacity duration-500 ease-in-out ${fadeIn ? 'opacity-100' : 'opacity-0'}`}
+                  className={`mt-2 text-gray-700 text-center lg:ml-6 transition-opacity duration-500 ease-in-out ${fadeIn ? 'opacity-100' : 'opacity-0'}`}
                 >
                   {caption}
                 </figcaption>
