@@ -18,7 +18,7 @@ const meta: Meta<typeof MoveIcon> = {
   },
   args: {
     name: 'Profile',
-    src: '/images/Profile.jpg',
+    src: './images/Profile.jpg',
   },
 };
 
@@ -31,6 +31,6 @@ export const AboutMe: Story = {};
 export const Skill: Story = {
   args: {
     name: 'Skill',
-    src: '/images/skills-icon.svg',
+    src: './images/skills-icon.svg',
   },
 };
