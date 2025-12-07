@@ -14,6 +14,7 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
+  base: '/Portfolio/', // GitHub Pages のリポジトリ名を追加
   plugins: [react()],
   test: {
     projects: [
