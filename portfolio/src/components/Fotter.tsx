@@ -65,7 +65,7 @@ export default function Footer() {
             aria-label='Qiita'
           >
             <img
-              src='/images/qiita-white-icon.png'
+              src='./images/qiita-white-icon.png'
               alt='Qiita Profile'
               className='w-6 h-6 object-cover'
               draggable='false'

@@ -23,36 +23,36 @@ export default function App() {
 
       {/* 既存のコンテンツ */}
       <div className='col-start-3 row-start-4 md:row-start-2 relative z-10'>
-        <MoveIcon name='About me' src='/images/about-me.svg' scrollTo='intro' />
+        <MoveIcon name='About me' src='./images/about-me.svg' scrollTo='intro' />
       </div>
       <div className='col-start-6 col-span-2 row-start-4 md:row-start-2 relative z-10'>
         <MoveIcon
           name='Skills'
-          src='/images/skills-icon.svg'
+          src='./skills-icon.svg'
           scrollTo='skill'
         />
       </div>
       <div className='col-start-3 row-start-9 md:row-start-11 relative z-10'>
         <MoveIcon
           name='Tripost'
-          src='/images/tripost/icon-192.svg'
+          src='./images/tripost/icon-192.svg'
           onClick={() => setOpenTripostModal(true)}
         />
       </div>
       <div className='col-start-6 col-span-2 row-start-9 md:row-start-11 relative z-10'>
-        <MoveIcon name='Works' src='/images/mywork-icon.svg' scrollTo='work' />
+        <MoveIcon name='Works' src='./images/mywork-icon.svg' scrollTo='work' />
       </div>
       <div className='col-start-10 row-start-4 md:row-start-2 relative z-10'>
         <MoveIcon
           name='Profile'
-          src='/images/profile-icon.svg'
+          src='./images/profile-icon.svg'
           scrollTo='profile'
         />
       </div>
       <div className='col-start-10 row-start-9 md:row-start-11 relative z-10'>
         <MoveIcon
           name='This site '
-          src='/images/this-page.svg'
+          src='./images/this-page.svg'
           onClick={() => setOpenPortfolioModal(true)}
         />
       </div>

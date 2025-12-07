@@ -11,7 +11,7 @@ export default function PortfolioModal({
   onClose,
 }: PortfolioModalProps) {
   const [mainSrc, setMainSrc] = useState(
-    '/images/portfolio/portfolio-site.png'
+    './images/portfolio/portfolio-site.png'
   );
   const [caption, setCaption] = useState('Top画面');
   const [fadeIn, setFadeIn] = useState(true);
@@ -19,12 +19,12 @@ export default function PortfolioModal({
   // 画像のプリロード
   useEffect(() => {
     const images = [
-      '/images/portfolio/portfolio-site.png',
-      '/images/portfolio/me.png',
-      '/images/portfolio/skill.png',
-      '/images/portfolio/work.png',
-      '/images/portfolio/modal.png',
-      '/images/portfolio/profile.png',
+      './images/portfolio/portfolio-site.png',
+      './images/portfolio/me.png',
+      './images/portfolio/skill.png',
+      './images/portfolio/work.png',
+      './images/portfolio/modal.png',
+      './images/portfolio/profile.png',
     ];
 
     images.forEach(src => {
@@ -56,7 +56,7 @@ export default function PortfolioModal({
     return () => {
       window.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = 'unset';
-      setMainSrc('/images/portfolio/portfolio-site.png');
+      setMainSrc('./images/portfolio/portfolio-site.png');
       setCaption('Top画面');
       setFadeIn(true);
     };
@@ -127,7 +127,7 @@ export default function PortfolioModal({
                       className='inline-flex flex-row items-center text-[#039be5] hover:text-[#026ca0]'
                     >
                       <img
-                        src='/images/qiita-icon.png'
+                        src='./images/qiita-icon.png'
                         alt='Qiita Tripost'
                         className='mx-1.5 w-5.5 h-5.5 object-cover aspect-square cursor-pointer'
                         draggable='false'
@@ -158,69 +158,69 @@ export default function PortfolioModal({
               <div className='flex flex-col lg:w-3/5'>
                 <div className='flex flex-row flex-wrap gap-2 mt-6 lg:mt-0 lg:ml-6 items-center md:justify-center '>
                   <img
-                    src='/images/portfolio/portfolio-site.png'
+                    src='./images/portfolio/portfolio-site.png'
                     alt='site top'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/portfolio/portfolio-site.png',
+                        './images/portfolio/portfolio-site.png',
                         'Top画面'
                       )
                     }
                   />
                   <img
-                    src='/images/portfolio/me.png'
+                    src='./images/portfolio/me.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
-                      handleImageChange('/images/portfolio/me.png', '自己紹介')
+                      handleImageChange('./images/portfolio/me.png', '自己紹介')
                     }
                   />
                   <img
-                    src='/images/portfolio/skill.png'
+                    src='./images/portfolio/skill.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/portfolio/skill.png',
+                        './images/portfolio/skill.png',
                         '使用技術'
                       )
                     }
                   />
                   <img
-                    src='/images/portfolio/work.png'
+                    src='./images/portfolio/work.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/portfolio/work.png',
+                        './images/portfolio/work.png',
                         '制作物一覧'
                       )
                     }
                   />
                   <img
-                    src='/images/portfolio/modal.png'
+                    src='./images/portfolio/modal.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/portfolio/modal.png',
+                        './images/portfolio/modal.png',
                         'モーダル表示'
                       )
                     }
                   />
                   <img
-                    src='/images/portfolio/profile.png'
+                    src='./images/portfolio/profile.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
-                      handleImageChange('/images/portfolio/profile.png', '経歴')
+                      handleImageChange('./images/portfolio/profile.png', '経歴')
                     }
                   />
                 </div>

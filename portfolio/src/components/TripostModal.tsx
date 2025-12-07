@@ -7,19 +7,19 @@ interface TripostModalProps {
 }
 
 export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
-  const [mainSrc, setMainSrc] = useState('/images/tripost/welcome.png');
+  const [mainSrc, setMainSrc] = useState('./images/tripost/welcome.png');
   const [caption, setCaption] = useState('Welcomeページ');
   const [fadeIn, setFadeIn] = useState(true);
 
   // 画像のプリロード
   useEffect(() => {
     const images = [
-      '/images/tripost/welcome.png',
-      '/images/tripost/register.png',
-      '/images/tripost/help.png',
-      '/images/tripost/home.png',
-      '/images/tripost/profile.png',
-      '/images/tripost/post_detail.png',
+      './images/tripost/welcome.png',
+      './images/tripost/register.png',
+      './images/tripost/help.png',
+      './images/tripost/home.png',
+      './images/tripost/profile.png',
+      './images/tripost/post_detail.png',
     ];
 
     images.forEach(src => {
@@ -51,7 +51,7 @@ export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
     return () => {
       window.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = 'unset';
-      setMainSrc('/images/tripost/welcome.png');
+      setMainSrc('./images/tripost/welcome.png');
       setCaption('Welcomeページ');
       setFadeIn(true);
     };
@@ -104,7 +104,7 @@ export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
                       className='inline-flex flex-row items-center text-[#039be5] hover:text-[#026ca0]'
                     >
                       <img
-                        src='/images/tripost/icon-192.png'
+                        src='./images/tripost/icon-192.png'
                         alt='Tripost Icon'
                         draggable='false'
                         className='w-8 h-auto object-cover aspect-square cursor-pointer'
@@ -141,7 +141,7 @@ export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
                       className='inline-flex flex-row items-center text-[#039be5] hover:text-[#026ca0]'
                     >
                       <img
-                        src='/images/qiita-icon.png'
+                        src='./images/qiita-icon.png'
                         alt='Qiita Tripost'
                         className='mx-1.5 w-5.5 h-5.5 object-cover aspect-square cursor-pointer'
                         draggable='false'
@@ -173,73 +173,73 @@ export default function TripostModal({ isOpen, onClose }: TripostModalProps) {
               <div className='flex flex-col lg:w-3/5'>
                 <div className='flex flex-row flex-wrap gap-2 mt-6 lg:mt-0 lg:ml-6 items-center md:justify-center '>
                   <img
-                    src='/images/tripost/welcome.png'
+                    src='./images/tripost/welcome.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/welcome.png',
+                        './images/tripost/welcome.png',
                         'Welcomeページ'
                       )
                     }
                   />
                   <img
-                    src='/images/tripost/register.png'
+                    src='./images/tripost/register.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/register.png',
+                        './images/tripost/register.png',
                         '新規登録ページ'
                       )
                     }
                   />
                   <img
-                    src='/images/tripost/help.png'
+                    src='./images/tripost/help.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/help.png',
+                        './images/tripost/help.png',
                         'お問い合わせページ'
                       )
                     }
                   />
                   <img
-                    src='/images/tripost/home.png'
+                    src='./images/tripost/home.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/home.png',
+                        './images/tripost/home.png',
                         '投稿一覧ページ'
                       )
                     }
                   />
                   <img
-                    src='/images/tripost/profile.png'
+                    src='./images/tripost/profile.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/profile.png',
+                        './images/tripost/profile.png',
                         'プロフィールページ'
                       )
                     }
                   />
                   <img
-                    src='/images/tripost/post_detail.png'
+                    src='./images/tripost/post_detail.png'
                     alt='Tripost Detail'
                     className='w-16 md:w-20 h-auto object-cover aspect-square rounded-sm shadow-lg cursor-pointer hover:scale-105 transform duration-200 ease-in-out'
                     draggable='false'
                     onClick={() =>
                       handleImageChange(
-                        '/images/tripost/post_detail.png',
+                        './images/tripost/post_detail.png',
                         '投稿詳細ページ'
                       )
                     }

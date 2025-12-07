@@ -12,7 +12,7 @@ export default function Intro() {
           {/* プロフィール画像 */}
           <div className='flex-shrink-0'>
             <img
-              src='/images/Profile.jpg'
+              src='./images/Profile.jpg'
               alt='Profile Image'
               className='w-40 h-40 md:w-52 md:h-52 object-cover rounded-sm'
               draggable='false'
@@ -60,7 +60,7 @@ export default function Intro() {
                   className='w-8 h-8 flex items-center justify-center'
                 >
                   <img
-                    src='/images/qiita-icon.png'
+                    src='./images/qiita-icon.png'
                     alt='Qiita Profile'
                     className='w-full h-full object-cover'
                     draggable='false'

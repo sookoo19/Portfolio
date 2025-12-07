@@ -22,7 +22,7 @@ export default function Work() {
               aria-label='Open modal'
             >
               <img
-                src='/images/tripost/ogp.jpg'
+                src='./images/tripost/ogp.jpg'
                 alt='Product Image1'
                 className='object-cover aspect-[16/10] rounded-sm shadow-lg hover:shadow-xl hover:scale-105 transform duration-200 ease-in-out'
                 draggable='false'
@@ -39,7 +39,7 @@ export default function Work() {
               aria-label='Open modal'
             >
               <img
-                src='/images/portfolio/portfolio-site.png'
+                src='./images/portfolio/portfolio-site.png'
                 alt='Product Image2'
                 className='object-cover aspect-[16/10] rounded-sm shadow-lg hover:shadow-xl hover:scale-105 transform duration-200 ease-in-out'
                 draggable='false'
@@ -53,7 +53,7 @@ export default function Work() {
         <div className='w-full flex flex-col md:flex-row items-center md:items-start gap-8 mt-4'>
           <div className='w-full flex flex-col items-center opacity-60'>
             <img
-              src='/images/ComingSoon.svg'
+              src='./images/ComingSoon.svg'
               alt='Product Image3'
               className='object-cover aspect-[16/10] rounded-sm shadow-lg'
               draggable='false'
@@ -62,7 +62,7 @@ export default function Work() {
           </div>
           <div className='w-full flex flex-col items-center opacity-60'>
             <img
-              src='/images/ComingSoon.svg'
+              src='./images/ComingSoon.svg'
               alt='Product Image4'
               className='object-cover aspect-[16/10] rounded-sm shadow-lg'
               draggable='false'

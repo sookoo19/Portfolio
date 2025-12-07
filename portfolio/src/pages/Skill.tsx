@@ -15,15 +15,15 @@ export default function Skill() {
             </h2>
             <SkillSheet
               name='JavaScript'
-              src='/images/javascript-original.svg'
+              src='./images/javascript-original.svg'
               level={3}
             />
             <SkillSheet
               name='TypeScript'
-              src='/images/typescript-original.svg'
+              src='./images/typescript-original.svg'
               level={2}
             />
-            <SkillSheet name='PHP' src='/images/php-original.svg' level={3} />
+            <SkillSheet name='PHP' src='./images/php-original.svg' level={3} />
           </div>
           <div className='w-full flex flex-col items-start space-y-4 border border-[#f2f2f2] rounded-2xl p-4 my-2'>
             <h2 className='text-2xl text-[#f2f2f2] font-bold'>
@@ -31,22 +31,22 @@ export default function Skill() {
             </h2>
             <SkillSheet
               name='React'
-              src='/images/react-original.svg'
+              src='./images/react-original.svg'
               level={3}
             />
             <SkillSheet
               name='Inertia.js'
-              src='/images/inertiajs-original.png'
+              src='./images/inertiajs-original.png'
               level={2}
             />
             <SkillSheet
               name='Next.js'
-              src='/images/nextjs-original.svg'
+              src='./images/nextjs-original.svg'
               level={1}
             />
             <SkillSheet
               name='Tailwind CSS'
-              src='/images/tailwindcss-original.svg'
+              src='./images/tailwindcss-original.svg'
               level={3}
             />
           </div>
@@ -56,12 +56,12 @@ export default function Skill() {
             <h2 className='text-2xl text-[#f2f2f2] font-bold'>バックエンド</h2>
             <SkillSheet
               name='Laravel'
-              src='/images/laravel-original.svg'
+              src='./images/laravel-original.svg'
               level={3}
             />
             <SkillSheet
               name='Node.js'
-              src='/images/nodejs-original.svg'
+              src='./images/nodejs-original.svg'
               level={2}
             />
           </div>
@@ -69,19 +69,19 @@ export default function Skill() {
             <h2 className='text-2xl text-[#f2f2f2] font-bold'>その他</h2>
             <SkillSheet
               name='MySQL'
-              src='/images/mysql-original.svg'
+              src='./images/mysql-original.svg'
               level={2}
             />
-            <SkillSheet name='AWS' src='/images/amazonaws.svg' level={3} />
+            <SkillSheet name='AWS' src='./images/amazonaws.svg' level={3} />
             <SkillSheet
               name='Docker'
-              src='/images/docker-original.svg'
+              src='./images/docker-original.svg'
               level={2}
             />
-            <SkillSheet name='Git' src='/images/git-original.svg' level={3} />
+            <SkillSheet name='Git' src='./images/git-original.svg' level={3} />
             <SkillSheet
               name='Github Actions'
-              src='/images/github-original.svg'
+              src='./images/github-original.svg'
               level={2}
             />
           </div>
@@ -94,30 +94,30 @@ export default function Skill() {
             <div className='flex flex-col items-start space-y-4'>
               <SkillSheet
                 name='After Effects'
-                src='/images/after-effects.png'
+                src='./images/after-effects.png'
                 level={3}
               />
               <SkillSheet
                 name='Premiere Pro'
-                src='/images/premiere-pro.png'
+                src='./images/premiere-pro.png'
                 level={4}
               />
               <SkillSheet
                 name='DaVinci Resolve'
-                src='/images/davinci-resolve-icon.png'
+                src='./images/davinci-resolve-icon.png'
                 level={3}
               />
             </div>
             <div className='flex flex-col items-start space-y-4 mt-4 md:mt-0'>
-              <SkillSheet name='Figma' src='/images/figma.png' level={3} />
+              <SkillSheet name='Figma' src='./images/figma.png' level={3} />
               <AnotherSkillSheet
                 name='English'
-                src='/images/english.svg'
+                src='./images/english.svg'
                 dis='推定CEFRレベル：B2~C1(中上級〜上級)'
               />
               <AnotherSkillSheet
                 name='French'
-                src='/images/french.svg'
+                src='./images/french.svg'
                 dis='推定CEFRレベル：B1~B2(中級〜中上級)'
               />
             </div>
