@@ -62,7 +62,7 @@ export default function Skill() {
             <SkillSheet
               name='Node.js'
               src='./images/nodejs-original.svg'
-              level={2}
+              level={1}
             />
           </div>
           <div className='w-full flex flex-col items-start space-y-4 border border-[#f2f2f2] rounded-2xl p-4 my-2'>
