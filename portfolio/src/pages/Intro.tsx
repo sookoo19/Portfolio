@@ -26,7 +26,7 @@ export default function Intro() {
             </h2>
 
             <p className='text-sm md:text-base text-[#f2f2f2] leading-relaxed text-left'>
-              大学で芸術工学を学んだのち、広告制作会社でTVCMやWebムービーの制作進行に従事。その後、北アフリカにあるチュニジアで2年間、青少年の育成に従事。そこで世界におけるITの重要性、影響力を再認識し、IT業界への転職を決意、2025年4月よりプログラミングの学習を始める。
+              大学で芸術工学を学んだのち、広告制作会社でTVCMやWebムービーの制作進行に従事。その後、北アフリカにあるチュニジアで2年間、青少年の育成に従事。そこで世界におけるITの重要性、影響力を再認識し、IT業界への転職を決意する。
             </p>
 
             <div className=' flex flex-row'>
