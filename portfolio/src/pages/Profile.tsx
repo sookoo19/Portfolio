@@ -220,7 +220,7 @@ export default function Profile() {
               </div>
             </motion.div>
 
-            <motion.div
+            {/*<motion.div
               className='flex flex-row items-start relative'
               initial='hidden'
               whileInView='visible'
@@ -238,7 +238,7 @@ export default function Profile() {
                   des='発展途上国での生活で、世界におけるITの重要性、影響力を再認識し、IT業界への転職を決意する。'
                 />
               </div>
-            </motion.div>
+            </motion.div>*/}
 
             <motion.div
               className='flex flex-row items-start relative'
